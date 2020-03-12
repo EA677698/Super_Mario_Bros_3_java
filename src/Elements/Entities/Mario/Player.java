@@ -75,10 +75,13 @@ public class Player extends Entity {
             sideScrolling();
             if(System.nanoTime()-movementTimer>10000000){
                 addX((int)(getVelocity()*getDirection()));
-//                if(Controls.jump){
-//                    jump();
-//                    takeOff = true;
-//                }
+                if(Controls.jump){
+                    jump();
+                  //  takeOff = true;
+                    setHasGravity(false);
+                } else {
+                    setHasGravity(true);
+                }
                 movementTimer = System.nanoTime();
             }
             if(Controls.right){
@@ -155,13 +158,14 @@ public class Player extends Entity {
     }
 
     private void jump(){
-        if(!heightCheck) {
-            if(getLocation().y<MAX_JUMP_HEIGHT){
+//        if(!heightCheck) {
+//            if(getLocation().y<MAX_JUMP_HEIGHT){
                 addY(-12);
-            } else {
-                heightCheck = true;
-            }
-        }
+//            } else {
+//                heightCheck = true;
+//                setHasGravity(true);
+//            }
+//        }
     }
 
     @Override
