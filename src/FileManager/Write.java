@@ -4,6 +4,7 @@ package FileManager;
 import Elements.Entities.Entity;
 import Elements.Manager;
 import Elements.Tiles.Tile;
+import Graphics.Screen;
 import Main.Global;
 
 import java.io.File;
@@ -20,6 +21,7 @@ public class Write {
         try {
             File file = new File(Global.localPath+"\\levels\\"+world+"-"+level+".mb3");
             PrintWriter writer = new PrintWriter(file, "UTF-8");
+            writer.println("Background,"+Screen.currentBackground+",");
             for(Entity entity : Manager.ents){
                 writer.println(entity.toString());
             }

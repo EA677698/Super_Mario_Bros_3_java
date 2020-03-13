@@ -34,6 +34,7 @@ public class Manager {
     public static final CopyOnWriteArrayList<Tile> tiles = new CopyOnWriteArrayList<>();
     public static final HashMap<String, Entity> customEntities = new HashMap<>();
     public static Player player;
+    public static Rectangle screen = new Rectangle(0,0,1920,1080);
     private static double timer1 = System.nanoTime();
     private static double hitTimer = System.nanoTime();
     private static double debugScroll = System.nanoTime();
@@ -216,15 +217,15 @@ public class Manager {
     }
 
     public static void calling(){
-        for(Entity entity : Manager.ents){
-            if(entity.getLocation().x<(-100*Window.scaleX)||entity.getLocation().x>(2020*Window.scaleX)){
+        for(Entity entity: Manager.ents){
+            if(!screen.intersects(entity.getHitBox())&&!screen.contains(entity.getHitBox())){
                 entity.setUnloaded(true);
             } else {
-                entity.setUnloaded(false);
+             entity.setUnloaded(false);
             }
         }
-        for(Tile tile : Manager.tiles){
-            if(tile.getLocation().x<(-100*Window.scaleX)||tile.getLocation().x>(2020*Window.scaleX)){
+        for(Tile tile: Manager.tiles){
+            if(!screen.intersects(tile.getHitBox())&&!screen.contains(tile.getHitBox())){
                 tile.setUnloaded(true);
             } else {
                 tile.setUnloaded(false);
@@ -238,8 +239,8 @@ public class Manager {
             freeEntity();
         }
         sideScroll();
-        Collision();
-        //calling();
+        collision();
+        calling();
         if(Settings.debug&&!Controls.console){
             deleteSelected();
         }
@@ -446,7 +447,7 @@ public class Manager {
     }
 
 
-    public static void Collision(){
+    public static void collision(){
         for(Entity ent : Manager.ents){
             if(ent.isCollision()&&!ent.isUnloaded()){
                 if(player!=null){
@@ -457,7 +458,7 @@ public class Manager {
                                 if(side==1||side==4){
                                     switch (player.getPower()){
                                         case SMALL: player.setDead(true);
-                                            BGM.level2.stop();
+                                            BGM.level1.stop();
                                             SFX.down1.setFramePosition(0);
                                             SFX.down1.start();
                                             break;

@@ -26,6 +26,10 @@ public abstract class Tile extends Elements {
     }
 
     public void tick(){
+
+    }
+
+    public void callingException(){
         hitBox.setLocation(getLocation().x,getLocation().y);
         hitBox.setSize(width,height);
     }

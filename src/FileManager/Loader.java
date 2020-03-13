@@ -15,7 +15,7 @@ import Elements.Tiles.Interactables.Bricks;
 import Elements.Tiles.Interactables.LuckyBlock;
 import Elements.Tiles.Interactables.Pipes;
 import Main.Global;
-
+import Graphics.Screen;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -52,6 +52,9 @@ public class Loader {
 
     public static void spawnElements(String[] parameters){
         switch (parameters[0]){
+            case "Background":
+                Screen.changeBackground(Integer.parseInt(parameters[1]));
+                break;
             case "Mario":
                 Manager.ents.add(new Player(Layer.valueOf(parameters[1]),new Point(Integer.parseInt(parameters[2]),Integer.parseInt(parameters[3])),
                         Integer.parseInt(parameters[4]),Integer.parseInt(parameters[5]),Integer.parseInt(parameters[6]),Integer.parseInt(parameters[7]),

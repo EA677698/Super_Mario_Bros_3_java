@@ -31,18 +31,17 @@ public class GameTick implements Runnable {
             Manager.tick();
             Global.HUDcheck();
 
-            if(BGM.level2.getFramePosition()>1625000){
-                BGM.level2.setFramePosition(150000);
-            }
             for(Entity ent:Manager.ents){
                 if(!ent.isUnloaded()){
                     ent.tick();
                 }
+                ent.callingException();
             }
             for(Tile tile:Manager.tiles){
                 if(!tile.isUnloaded()){
                     tile.tick();
                 }
+                tile.callingException();
             }
             Window.screen.repaint();
             if(System.nanoTime()-timer>1000000000){

@@ -22,7 +22,7 @@ public class Global {
         if(Manager.player!=null){
             active = new boolean[7];
             int temp = (int)Manager.player.getXVelocity();
-            for(int i = 0; temp>5; i++){
+            for(int i = 0; temp>4; i++){
                 active[i] = true;
                 temp--;
             }

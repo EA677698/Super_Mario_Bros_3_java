@@ -34,6 +34,7 @@ public class Screen extends JPanel {
     public final CopyOnWriteArrayList<Elements> layer2 = new CopyOnWriteArrayList<>();
     public final CopyOnWriteArrayList<Elements> layer3 = new CopyOnWriteArrayList<>();
     public static Image background;
+    public static int currentBackground = 2;
     Image board, speed, power, crt;
     SFX sfx;
     BGM bgm;
@@ -46,10 +47,10 @@ public class Screen extends JPanel {
             e.printStackTrace();
         }
         nums = new HashMap<>();
-        BGM.level2.start();
-        BGM.level2.loop(-1);
+        BGM.level1.start();
+        BGM.level1.loop(-1);
         try {
-            background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\2.png"));
+            background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+currentBackground+".png"));
             board = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\main.png"));
             speed = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\speed.png"));
             power = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\p.png"));
@@ -164,6 +165,7 @@ public class Screen extends JPanel {
         if(Settings.crt){
             g.drawImage(crt,0,0,(int)(1920*Window.scaleX),(int)(1080*Window.scaleY),this);
         }
+        g.setColor(Color.GREEN);
     }
 
     public void scaling(){
@@ -180,31 +182,36 @@ public class Screen extends JPanel {
                 if (elements instanceof Tile) {
                     if (!(elements instanceof LayeredTile) && !(elements instanceof Interactable)) {
                         for (int i = 0; i < ((Tile) elements).getSprites().length; i++) {
-                            g.drawImage(((Tile) elements).getSprites()[i], (int) ((((Tile) elements).getLocation().x + (60 * i)) * Window.scaleX), (int) (((Tile) elements).getLocation().y * Window.scaleY), (int) (60 * Window.scaleX), (int) (60 * Window.scaleY), this);
+                            g.drawImage(((Tile) elements).getSprites()[i], (int) ((elements.getLocation().x + (60 * i)) * Window.scaleX), (int) (elements.getLocation().y * Window.scaleY), (int) (60 * Window.scaleX), (int) (60 * Window.scaleY), this);
                         }
                     } else if (elements instanceof LayeredTile) {
                         for (int i = 0; i < ((LayeredTile) elements).get2DSprites().length; i++) {
                             for (int e = 0; e < ((LayeredTile) elements).get2DSprites()[0].length; e++) {
-                                g.drawImage(((LayeredTile) elements).get2DSprites()[i][e], (int) ((((Tile) elements).getLocation().x + (60 * e)) * Window.scaleX), (int) ((((Tile) elements).getLocation().y + (i * 60)) * Window.scaleY), (int) (60 * Window.scaleX), (int) (60 * Window.scaleY), this);
+                                g.drawImage(((LayeredTile) elements).get2DSprites()[i][e], (int) ((elements.getLocation().x + (60 * e)) * Window.scaleX), (int) ((elements.getLocation().y + (i * 60)) * Window.scaleY), (int) (60 * Window.scaleX), (int) (60 * Window.scaleY), this);
                             }
                         }
                     } else {
-                        g.drawImage(((Tile) elements).getSprites()[((Interactable) elements).getCurrentSprite()], (int) (((Tile) elements).getLocation().x * Window.scaleX), (int) (((Tile) elements).getLocation().y * Window.scaleY), (int) (60 * Window.scaleX), (int) (60 * Window.scaleY), this);
+                        g.drawImage(((Tile) elements).getSprites()[((Interactable) elements).getCurrentSprite()], (int) (elements.getLocation().x * Window.scaleX), (int) (elements.getLocation().y * Window.scaleY), (int) (60 * Window.scaleX), (int) (60 * Window.scaleY), this);
                     }
                 }
                 if (elements instanceof Entity) {
                     if (((Entity) elements).getDirection() == -1) {
-                        g.drawImage(((Entity) elements).getSprite(), (int) ((((Entity) elements).getLocation().x + ((Entity) elements).getWidth()) * Window.scaleX), (int) (((Entity) elements).getLocation().y * Window.scaleY), (int) ((-1 * (((Entity) elements).getWidth())) * Window.scaleX), (int) (((Entity) elements).getHeight() * Window.scaleY), this);
+                        g.drawImage(((Entity) elements).getSprite(), (int) ((elements.getLocation().x + ((Entity) elements).getWidth()) * Window.scaleX), (int) (elements.getLocation().y * Window.scaleY), (int) ((-1 * (((Entity) elements).getWidth())) * Window.scaleX), (int) (((Entity) elements).getHeight() * Window.scaleY), this);
                     } else {
-                        g.drawImage(((Entity) elements).getSprite(), (int) (((Entity) elements).getLocation().x * Window.scaleX), (int) (((Entity) elements).getLocation().y * Window.scaleY), (int) (((Entity) elements).getWidth() * Window.scaleX), (int) (((Entity) elements).getHeight() * Window.scaleY), this);
+                        g.drawImage(((Entity) elements).getSprite(), (int) (elements.getLocation().x * Window.scaleX), (int) (elements.getLocation().y * Window.scaleY), (int) (((Entity) elements).getWidth() * Window.scaleX), (int) (((Entity) elements).getHeight() * Window.scaleY), this);
                     }
                 }
             }
         }
     }
 
-    public void changeBackground(Image background){
-        this.background = background;
+    public static void changeBackground(int inputBackground){
+        currentBackground = inputBackground;
+        try {
+            background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+currentBackground+".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -1,4 +1,5 @@
-Mario,MIDDLE_LAYER,951,701,59,80,1,1,5.0,9.8,true,true,
+Background,2,
+Mario,MIDDLE_LAYER,942,705,58,80,1,1,0.0,9.8,true,true,
 Platform,MIDDLE_LAYER,780,780,true,39,0,
 Hill,BACK_LAYER,900,540,false,2,6,
 Hill,BACK_LAYER,840,600,false,2,4,

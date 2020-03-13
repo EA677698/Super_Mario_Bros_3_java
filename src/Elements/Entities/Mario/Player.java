@@ -12,14 +12,15 @@ import java.io.IOException;
 public class Player extends Entity {
 
     private Powers power;
-    private final int OG_SPEED = 5;
-    private final int MAX_SPEED = 12;
-    private final int MAX_JUMP_HEIGHT = 350;
+    private static final int OG_SPEED = 4;
+    private static final int MAX_SPEED = 10;
+    private static final int MAX_JUMP_HEIGHT = 300;
     private int previousDirection, totalYCount;
     private double movementTimer = System.nanoTime();
     private double slowDownTimer = System.nanoTime();
     private double spriteTimer = System.nanoTime();
     private double speedTimer = System.nanoTime();
+    private double runTimer = System.nanoTime();
     private double deathTimer = System.nanoTime();
     private boolean flag, middle, start, middleH, startH, heightCheck, offGround;
     private Image[] smallMario, bigMario;
@@ -70,10 +71,6 @@ public class Player extends Entity {
     public void tick() {
         super.tick();
         if(!isDead()){
-            //System.out.println(getTouchingGround());
-            //System.out.println(getVelocity());
-            //System.out.println(getDirection());
-            //System.out.println(getLocation());
             sideScrolling();
             if(System.nanoTime()-movementTimer>10000000){
                 addX((int)(getXVelocity()*getDirection()));
@@ -132,21 +129,19 @@ public class Player extends Entity {
     }
 
     private void walk(){
-//        if(previousDirection!=getDirection()){
-//            setVelocity(getVelocity()-3);
-//        }
         changeSprite();
-        if(System.nanoTime()-speedTimer>100000000) {
-            if (!Controls.alt) {
+        if (!Controls.alt) {
+            if(System.nanoTime()-runTimer>300000000) {
                 if (getXVelocity() < OG_SPEED) {
                     setXVelocity(getXVelocity() + 1);
-                } else if(getXVelocity()>OG_SPEED){
-                    setXVelocity(getXVelocity()-1);
+                } else if (getXVelocity() > OG_SPEED) {
+                    setXVelocity(getXVelocity() - 1);
                 }
-            }else {
-                if(getXVelocity()<MAX_SPEED){
-                    setXVelocity(getXVelocity()+1);
-                }
+                runTimer = System.nanoTime();
+            }
+        } else if(System.nanoTime()-speedTimer>100000000) {
+            if(getXVelocity()<MAX_SPEED){
+                setXVelocity(getXVelocity()+1);
             }
             speedTimer = System.nanoTime();
         }

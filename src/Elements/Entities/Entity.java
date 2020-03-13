@@ -85,6 +85,9 @@ public abstract class Entity extends Elements {
                 gravityTimer = System.nanoTime();
             }
         }
+    }
+
+    public void callingException(){
         hitBox.setLocation(location.x, location.y);
         hitBox.setSize(width-20,height);
     }
