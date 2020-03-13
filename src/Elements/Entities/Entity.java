@@ -14,7 +14,7 @@ public abstract class Entity extends Elements {
     private Point location;
     private Image baseSprite;
     private int width, height, life, damage,sprite,direction,touchingGround;
-    private double velocity, gravity;
+    private double XVelocity, YVelocity, gravity;
     private double gravityTimer = System.nanoTime();
     private Rectangle hitBox;
     private boolean isSelected,hasGravity;
@@ -33,7 +33,7 @@ public abstract class Entity extends Elements {
         collision = hasCollision;
         hasGravity = true;
         damage = 1;
-        velocity = 1.0;
+        XVelocity = 1.0;
         gravity = 9.8;
         hitBox = new Rectangle(location.x, location.y,width,height);
         initializeImages();
@@ -47,14 +47,14 @@ public abstract class Entity extends Elements {
         this.life = life;
         this.damage = damage;
         this.hasGravity = hasGravity;
-        velocity = 1.0;
+        XVelocity = 1.0;
         collision = hasCollision;
         gravity = 9.8;
         hitBox = new Rectangle(location.x, location.y,width,height);
         initializeImages();
     }
 
-    public Entity(Layer layer, Point coordinates, int width, int height, int life, int damage, double velocity, double gravity,boolean hasGravity, boolean hasCollision){
+    public Entity(Layer layer, Point coordinates, int width, int height, int life, int damage, double XVelocity, double gravity, boolean hasGravity, boolean hasCollision){
         super(layer, coordinates);
         location = new Point((int)(coordinates.x*Window.scaleX),(int)(coordinates.y*Window.scaleY));
         this.width = (int)(width*Window.scaleX);
@@ -62,7 +62,7 @@ public abstract class Entity extends Elements {
         this.life = life;
         this.damage = damage;
         collision = hasCollision;
-        this.velocity = velocity;
+        this.XVelocity = XVelocity;
         this.gravity = gravity;
         this.hasGravity = hasGravity;
         hitBox = new Rectangle(location.x, location.y,width,height);
@@ -205,12 +205,12 @@ public abstract class Entity extends Elements {
         this.gravity = gravity;
     }
 
-    public double getVelocity() {
-        return velocity;
+    public double getXVelocity() {
+        return XVelocity;
     }
 
-    public void setVelocity(double velocity) {
-        this.velocity = velocity;
+    public void setXVelocity(double XVelocity) {
+        this.XVelocity = XVelocity;
     }
 
     public int getCurrentSprite() {
@@ -224,7 +224,7 @@ public abstract class Entity extends Elements {
 
     public String toString(){
         return entityName+","+getLayer()+","+location.x+","+location.y+","+width+","+height+","+life+","+damage+
-                ","+ velocity +","+gravity+","+hasGravity+","+collision+",";
+                ","+ XVelocity +","+gravity+","+hasGravity+","+collision+",";
     }
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
@@ -291,5 +291,13 @@ public abstract class Entity extends Elements {
 
     public Image[] getImages(){
         return null;
+    }
+
+    public double getYVelocity() {
+        return YVelocity;
+    }
+
+    public void setYVelocity(double YVelocity) {
+        this.YVelocity = YVelocity;
     }
 }

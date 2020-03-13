@@ -35,6 +35,6 @@ public abstract class NotLiving extends Entity {
 
     public String toString(){
         return getEntityName()+","+getLayer()+","+getLocation().x+","+getLocation().y+","+getWidth()+","+getHeight()+","+getLife()+","+getDamage()+
-                ","+ getVelocity() +","+getGravity()+","+getDirection()+","+isHasGravity()+","+isCollision()+",";
+                ","+ getXVelocity() +","+getGravity()+","+getDirection()+","+isHasGravity()+","+isCollision()+",";
     }
 }

@@ -16,21 +16,21 @@ public class Goomba extends Enemy {
         super(layer, coordinates, width, height,direction, hasCollision);
         setEntityName("Goomba");
         this.setDirection(direction);
-        this.setVelocity(3);
+        this.setXVelocity(3);
     }
 
     public Goomba(Layer layer, Point coordinates, int width, int height, int life, int damage, int direction, boolean hasGravity, boolean hasCollision) {
         super(layer, coordinates, width, height, life, damage,direction,hasGravity, hasCollision);
         setEntityName("Goomba");
         this.setDirection(direction);
-        this.setVelocity(3);
+        this.setXVelocity(3);
     }
 
     public Goomba(Layer layer, Point coordinates, int width, int height, int life, int damage, double velocity, double gravity, int direction, boolean hasGravity, boolean hasCollision) {
         super(layer, coordinates, width, height, life, damage, velocity, gravity,direction,hasGravity, hasCollision);
         setEntityName("Goomba");
         this.setDirection(direction);
-        this.setVelocity(3);
+        this.setXVelocity(3);
     }
 
     @Override

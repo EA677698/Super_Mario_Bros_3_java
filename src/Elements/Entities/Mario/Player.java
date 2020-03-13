@@ -14,35 +14,41 @@ public class Player extends Entity {
     private Powers power;
     private final int OG_SPEED = 5;
     private final int MAX_SPEED = 12;
-    private final int MAX_JUMP_HEIGHT = 300;
-    private int yAcceleration, xAcceleration, previousDirection;
+    private final int MAX_JUMP_HEIGHT = 350;
+    private int previousDirection, totalYCount;
     private double movementTimer = System.nanoTime();
     private double slowDownTimer = System.nanoTime();
     private double spriteTimer = System.nanoTime();
     private double speedTimer = System.nanoTime();
     private double deathTimer = System.nanoTime();
-    private boolean flag, middle, start, middleH, startH, heightCheck, takeOff;
+    private boolean flag, middle, start, middleH, startH, heightCheck, offGround;
     private Image[] smallMario, bigMario;
 
     public Player(Layer layer, Point coordinates, int width, int height, boolean hasCollision) {
         super(layer, coordinates, width, height, hasCollision);
         power = Powers.SMALL;
         this.setEntityName("Mario");
-        this.setVelocity(5);
+        this.setXVelocity(5);
+        this.setYVelocity(0);
+        totalYCount = 0;
     }
 
     public Player(Layer layer, Point coordinates, int width, int height, int life, int damage, boolean hasGravity, boolean hasCollision) {
         super(layer, coordinates, width, height, life, damage, hasGravity, hasCollision);
         power = Powers.SMALL;
         this.setEntityName("Mario");
-        this.setVelocity(5);
+        this.setXVelocity(5);
+        this.setYVelocity(0);
+        totalYCount = 0;
     }
 
     public Player(Layer layer, Point coordinates, int width, int height, int life, int damage, double speed, double gravity, boolean hasGravity, boolean hasCollision) {
         super(layer, coordinates, width, height, life, damage, speed, gravity, hasGravity, hasCollision);
         power = Powers.SMALL;
         this.setEntityName("Mario");
-        this.setVelocity(5);
+        this.setXVelocity(5);
+        this.setYVelocity(0);
+        totalYCount = 0;
     }
 
     public void initializeImages(){
@@ -64,23 +70,19 @@ public class Player extends Entity {
     public void tick() {
         super.tick();
         if(!isDead()){
-            if(getTouchingGround()>0){
-                takeOff = false;
-                heightCheck = false;
-            }
-            System.out.println(getTouchingGround());
+            //System.out.println(getTouchingGround());
             //System.out.println(getVelocity());
             //System.out.println(getDirection());
             //System.out.println(getLocation());
             sideScrolling();
             if(System.nanoTime()-movementTimer>10000000){
-                addX((int)(getVelocity()*getDirection()));
-                if(Controls.jump){
+                addX((int)(getXVelocity()*getDirection()));
+                if(!offGround &&Controls.jump){
                     jump();
-                  //  takeOff = true;
-                    setHasGravity(false);
+                    setSprite(3);
                 } else {
                     setHasGravity(true);
+                    offGround = true;
                 }
                 movementTimer = System.nanoTime();
             }
@@ -96,8 +98,36 @@ public class Player extends Entity {
                 slowDown();
                 setSprite(0);
             }
+            if(getYVelocity()>-1){
+                totalYCount = 0;
+            }
+            if(getTouchingGround()>0){
+                heightCheck = false;
+                offGround = false;
+            } else {
+                setSprite(3);
+            }
         } else {
             death();
+        }
+    }
+
+    private void jump(){
+        addY((int)getYVelocity());
+        if(getXVelocity()>MAX_SPEED-2&&!heightCheck&&totalYCount<(MAX_JUMP_HEIGHT*2)){
+            setYVelocity(-12);
+            totalYCount += 12;
+            setHasGravity(false);
+        } else if(!heightCheck&&totalYCount<MAX_JUMP_HEIGHT){
+            setYVelocity(-12);
+            totalYCount += 12;
+            setHasGravity(false);
+        } else {
+            heightCheck = true;
+            setYVelocity(getYVelocity()+1);
+            if(getYVelocity()<0){
+                setHasGravity(true);
+            }
         }
     }
 
@@ -108,14 +138,14 @@ public class Player extends Entity {
         changeSprite();
         if(System.nanoTime()-speedTimer>100000000) {
             if (!Controls.alt) {
-                if (getVelocity() < OG_SPEED) {
-                    setVelocity(getVelocity() + 1);
-                } else if(getVelocity()>OG_SPEED){
-                    setVelocity(getVelocity()-1);
+                if (getXVelocity() < OG_SPEED) {
+                    setXVelocity(getXVelocity() + 1);
+                } else if(getXVelocity()>OG_SPEED){
+                    setXVelocity(getXVelocity()-1);
                 }
             }else {
-                if(getVelocity()<MAX_SPEED){
-                    setVelocity(getVelocity()+1);
+                if(getXVelocity()<MAX_SPEED){
+                    setXVelocity(getXVelocity()+1);
                 }
             }
             speedTimer = System.nanoTime();
@@ -124,8 +154,8 @@ public class Player extends Entity {
 
     private void slowDown(){
         if(System.nanoTime()-slowDownTimer>500000000){
-            if(getVelocity()>0.0){
-                setVelocity(getVelocity()-1);
+            if(getXVelocity()>0.0){
+                setXVelocity(getXVelocity()-1);
             }
         }
     }
@@ -148,24 +178,13 @@ public class Player extends Entity {
             startH = true;
         }
         if(getLocation().x>=(1920/2)){
-            addX((int)(getVelocity()*-1));
+            addX((int)(getXVelocity()*-1));
             middle = true;
         }
         if(getLocation().x<=860){
-            addX((int)getVelocity());
+            addX((int) getXVelocity());
             start = true;
         }
-    }
-
-    private void jump(){
-//        if(!heightCheck) {
-//            if(getLocation().y<MAX_JUMP_HEIGHT){
-                addY(-12);
-//            } else {
-//                heightCheck = true;
-//                setHasGravity(true);
-//            }
-//        }
     }
 
     @Override

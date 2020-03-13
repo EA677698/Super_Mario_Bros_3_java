@@ -15,7 +15,7 @@ LuckyBlock,MIDDLE_LAYER,1500,540,true,null
 LuckyBlock,MIDDLE_LAYER,1680,360,true,null
 LuckyBlock,MIDDLE_LAYER,1620,360,true,null
 Cloud,BACK_LAYER,1200,240,false,1,
-Cloud,BACK_LAYER,1260,240,true,1,
+Cloud,BACK_LAYER,1260,240,false,1,
 BigBlock,BACK_LAYER,1800,480,true,1,2,0,
 BigBlock,BACK_LAYER,1680,600,true,2,0,0,
 Cloud,BACK_LAYER,1980,180,false,1,

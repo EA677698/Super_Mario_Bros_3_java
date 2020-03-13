@@ -46,6 +46,6 @@ public abstract class Enemy extends Entity {
         @Override
     public String toString() {
         return getEntityName()+","+getLayer()+","+getLocation().x+","+getLocation().y+","+getWidth()+","+getHeight()+","+
-                getLife()+","+getDamage()+","+getVelocity()+","+getGravity()+","+getDirection()+","+isHasGravity()+","+isCollision()+",";
+                getLife()+","+getDamage()+","+ getXVelocity()+","+getGravity()+","+getDirection()+","+isHasGravity()+","+isCollision()+",";
     }
 }

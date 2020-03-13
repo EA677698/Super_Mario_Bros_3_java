@@ -424,21 +424,21 @@ public class Manager {
             if(player.isMiddle()&&Controls.right){
                 for(Entity ent: ents){
                     if(ent!=player){
-                        ent.addX((int)(-1*player.getVelocity()));
+                        ent.addX((int)(-1*player.getXVelocity()));
                     }
                 }
                 for(Tile tile : tiles){
-                    tile.addX((int)(-1*player.getVelocity()));
+                    tile.addX((int)(-1*player.getXVelocity()));
                 }
             } else {
                 if(player.isStart()&&Controls.left){
                     for(Entity ent: ents){
                         if(ent!=player){
-                            ent.addX((int)player.getVelocity());
+                            ent.addX((int)player.getXVelocity());
                         }
                     }
                     for(Tile tile : tiles){
-                        tile.addX((int)player.getVelocity());
+                        tile.addX((int)player.getXVelocity());
                     }
                 }
             }
