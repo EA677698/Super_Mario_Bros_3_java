@@ -36,19 +36,9 @@ public class Screen extends JPanel {
     public static Image background;
     public static int currentBackground = 2;
     Image board, speed, power, crt;
-    SFX sfx;
-    BGM bgm;
     public static HashMap<Integer,Image> nums;
     public Screen(){
-        try {
-            bgm = new BGM();
-            sfx = new SFX();
-        } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
-            e.printStackTrace();
-        }
         nums = new HashMap<>();
-        BGM.level1.start();
-        BGM.level1.loop(-1);
         try {
             background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+currentBackground+".png"));
             board = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\main.png"));

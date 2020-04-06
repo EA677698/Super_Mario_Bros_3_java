@@ -7,7 +7,8 @@ import Elements.Entities.NotLiving.*;
 import Elements.Tiles.*;
 import Elements.Tiles.Interactables.Pipes;
 import FileManager.Loader;
-import FileManager.Write;
+import FileManager.Saver;
+import Main.GameTick;
 import Main.Global;
 import Settings.Controls;
 import Settings.Settings;
@@ -65,13 +66,17 @@ public class Manager {
                     }
                     return true;
                 case "save":
-                    Write.world = Integer.parseInt(end.substring(0,end.indexOf(" ")));
-                    Write.level = Integer.parseInt(end.substring(end.indexOf(" ")+1));
-                    Write.createLevel();
+                    Saver.world = Integer.parseInt(end.substring(0,end.indexOf(" ")));
+                    Saver.level = Integer.parseInt(end.substring(end.indexOf(" ")+1));
+                    Saver.createLevel();
                     return true;
                 case "load":
                     Loader.loadLevel(end);
-
+                    return true;
+                case "bgm":
+                    GameTick.clipReset = false;
+                    GameTick.soundManager(end);
+                    return true;
             }
         } else {
             switch (input){
@@ -93,6 +98,8 @@ public class Manager {
                 case "unload":
                     Loader.unloadLevel();
                     return true;
+                case "mute":
+                    Settings.muted = !Settings.muted;
             }
         }
         return false;
@@ -458,7 +465,7 @@ public class Manager {
                                 if(side==1||side==4){
                                     switch (player.getPower()){
                                         case SMALL: player.setDead(true);
-                                            BGM.level1.stop();
+                                            BGM.two.stop();
                                             SFX.down1.setFramePosition(0);
                                             SFX.down1.start();
                                             break;

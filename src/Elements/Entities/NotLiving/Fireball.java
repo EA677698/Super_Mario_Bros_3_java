@@ -31,7 +31,7 @@ public class Fireball extends NotLiving {
                 if(player.getHitBox().intersects(getHitBox())){
                     switch (player.getPower()){
                         case SMALL: player.setDead(true);
-                            BGM.level1.stop();
+                            BGM.two.stop();
                             SFX.down1.setFramePosition(0);
                             SFX.down1.start();
                             break;

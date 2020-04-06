@@ -5,6 +5,7 @@ import Elements.Entities.Entity;
 import Elements.Manager;
 import Elements.Tiles.Tile;
 import Graphics.Screen;
+import Main.GameTick;
 import Main.Global;
 
 import java.io.File;
@@ -12,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
-public class Write {
+public class Saver {
 
     public static int world;
     public static int level;
@@ -21,6 +22,7 @@ public class Write {
         try {
             File file = new File(Global.localPath+"\\levels\\"+world+"-"+level+".mb3");
             PrintWriter writer = new PrintWriter(file, "UTF-8");
+            writer.println("BGM,"+GameTick.clipID+",");
             writer.println("Background,"+Screen.currentBackground+",");
             for(Entity entity : Manager.ents){
                 writer.println(entity.toString());

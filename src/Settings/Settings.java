@@ -8,6 +8,8 @@ public class Settings {
     public static boolean hitBoxes = false;
     public static boolean crt = false;
     public static boolean fps = false;
+    public static boolean muted = false;
+
     public static void tick(){
         if(!debug){
             if(Manager.selectedEntity!=null){

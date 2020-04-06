@@ -14,8 +14,11 @@ import Elements.Tiles.*;
 import Elements.Tiles.Interactables.Bricks;
 import Elements.Tiles.Interactables.LuckyBlock;
 import Elements.Tiles.Interactables.Pipes;
+import Main.GameTick;
 import Main.Global;
 import Graphics.Screen;
+import Sound.BGM;
+
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -52,6 +55,9 @@ public class Loader {
 
     public static void spawnElements(String[] parameters){
         switch (parameters[0]){
+            case "BGM":
+                GameTick.soundManager(parameters[1]);
+                break;
             case "Background":
                 Screen.changeBackground(Integer.parseInt(parameters[1]));
                 break;

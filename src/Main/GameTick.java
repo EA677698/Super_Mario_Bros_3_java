@@ -7,14 +7,40 @@ import Settings.Controls;
 import Settings.Settings;
 import Sound.BGM;
 import Elements.Tiles.Tile;
+import Sound.SFX;
+
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
 
 
 public class GameTick implements Runnable {
 
     private Thread thread;
+    static final int DEFAULT_CLIP = 1;
     public static int cps = 0;
     public static int count = 0;
     double timer = System.nanoTime();
+    public static boolean clipReset;
+    static SFX sfx;
+    static BGM bgm;
+
+    static {
+        try {
+            sfx = new SFX();
+            bgm = new BGM();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Clip currentClip;
+    public static int clipID;
 
     private boolean running;
 
@@ -24,6 +50,9 @@ public class GameTick implements Runnable {
 
     @Override
     public void run() {
+        currentClip = BGM.integerToClip(1);
+        currentClip.start();
+        clipID = 1;
         while(running){
             count++;
             Controls.tick();
@@ -67,6 +96,20 @@ public class GameTick implements Runnable {
             thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void soundManager(String bgmID){
+        if(!Settings.muted&&!clipReset){
+            if(currentClip!=null) {
+                currentClip.setFramePosition(0);
+                currentClip.stop();
+            }
+            currentClip = BGM.integerToClip(Integer.parseInt(bgmID));
+            clipID = Integer.parseInt(bgmID);
+            currentClip.start();
+        } else if(Settings.muted){
+            clipReset = false;
         }
     }
 
