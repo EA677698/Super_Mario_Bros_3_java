@@ -2,31 +2,50 @@
 
 
 
-<h2> Controls
+## Controls
+- Left arrow - Moves Mario to the left
+- Right arrow - Moves Mario to the right
+- X - Allows Mario to run
+- C - Allows Mario to Jump
+- ` - Opens/Closes the console
+## Commands
+   - Basic Syntax for Complex commands: <command> <arguments>
+   - spawn - Spawns in an Element
+   - remove - Removes an Element
+   - add - adds a stat to the scoreboard (money, score, lives)
+   - freeze - freezes an Element (put "all" for the argument to freeze all elements)
+   - background - changes the background (only accepts integers for arguments)
+   - save - saves a level, Syntax: save <world>"-"<level>
+   - load - loads a level, Syntax: load <world> <level> (There is a premade level that recreates level 1-1 from the original game)
+   - bgm - changes the background music (only accepts integers for arguments)
+  ### Basic Syntax for Simple commands: <command>
+   - debug - enables debug tools (allows you to resize tiles by selecting them and using arrow keys)
+   - fps - enables an FPS counter
+   - hitbox - enables visible hitboxes
+   - crt - enables CRT mode
+   - quit - quits the program
+   - unload - unloads the level
+   - mute - mutes the background music
 
-<h4>Left arrow - Moves Mario to the left
-<h4>Right arrow - Moves Mario to the right
-<h4>X - Allows Mario to run
-<h4>C - Allows Mario to Jump
-<h4>` - Opens/Closes the console
-
-<h2> Commands
-  <br>
-  <h3> Basic Syntax for Complex commands: <command> <arguments>
-  <h4> spawn - Spawns in an Element
-  <h4> remove - Removes an Element
-  <h4> add - adds a stat to the scoreboard (money, score, lives)
-  <h4> freeze - freezes an Element (put "all" for the argument to freeze all elements)
-  <h4> background - changes the background (only accepts integers for arguments)
-  <h4> save - saves a level, Syntax: save <world>"-"<level>
-  <h4> load - loads a level, Syntax: load <world> <level> (There is a premade level that recreates level 1-1 from the original game)
-  <h4> bgm - changes the background music (only accepts integers for arguments)
-    <br>
-  <h3> Basic Syntax for Simple commands: <command>
-  <h4> debug - enables debug tools
-  <h4> fps - enables an FPS counter
-  <h4> hitbox - enables visible hitboxes
-  <h4> crt - enables CRT mode
-  <h4> quit - quits the program
-  <h4> unload - unloads the level
-  <h4> mute - mutes the background music
+## Entities
+  - Mario
+  - Goomba
+  - koopatroppa
+  - redmushroom
+  - greenmushroom
+  - coin
+  - firehammerbro
+## Tiles
+  - Floor
+  - woodenblock
+  - luckyblock
+  - hill1
+  - hill2
+  - brick
+  - pipe
+  - cloud1
+  - bg (Green Big Block)
+  - bp (Pink Big Block)
+  - bb (Blue big block)
+  - bw (White big block)
+  - shrub
