@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d39f5f7-8a79-4c18-8666-a2834b076462" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Mario_Bros_Attempt_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Mario_Bros_Attempt_3_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Elements.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/Enemy.html" beforeDir="false" />
@@ -118,6 +119,7 @@
       <change beforePath="$PROJECT_DIR$/JavaDocs/script.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDocs/serialized-form.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mario.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
