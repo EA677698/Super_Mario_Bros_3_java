@@ -19,7 +19,7 @@
    - load - loads a level, Syntax: load <world> <level> (There is a premade level that recreates level 1-1 from the original game)
    - bgm - changes the background music (only accepts integers for arguments)
   ### Basic Syntax for Simple commands: <command>
-   - debug - enables debug tools (allows you to resize tiles by selecting them and using arrow keys)
+   - debug - enables debug tools (allows you to resize tiles by selecting them and using arrow keys while holding shift)
    - fps - enables an FPS counter
    - hitbox - enables visible hitboxes
    - crt - enables CRT mode
