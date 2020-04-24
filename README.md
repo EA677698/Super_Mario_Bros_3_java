@@ -15,8 +15,8 @@
    - add - adds a stat to the scoreboard (money, score, lives)
    - freeze - freezes an Element (put "all" for the argument to freeze all elements)
    - background - changes the background (only accepts integers for arguments)
-   - save - saves a level, Syntax: save <world>"-"<level>
-   - load - loads a level, Syntax: load <world> <level> (There is a premade level that recreates level 1-1 from the original game)
+   - save - saves a level, Syntax: save <world> <level>
+   - load - loads a level, Syntax: load <world>"-"<level> (There is a premade level that recreates level 1-1 from the original game)
    - bgm - changes the background music (only accepts integers for arguments)
   ### Basic Syntax for Simple commands: <command>
    - debug - enables debug tools (allows you to resize tiles by selecting them and using arrow keys while holding shift)
