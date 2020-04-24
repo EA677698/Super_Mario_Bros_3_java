@@ -19,7 +19,7 @@
   <h4> freeze - freezes an Element (put "all" for the argument to freeze all elements)
   <h4> background - changes the background (only accepts integers for arguments)
   <h4> save - saves a level, Syntax: save <world>"-"<level>
-  <h4> load - loads a level, Syntax: load <world> <level>
+  <h4> load - loads a level, Syntax: load <world> <level> (There is a premade level that recreates level 1-1 from the original game)
   <h4> bgm - changes the background music (only accepts integers for arguments)
     <br>
   <h3> Basic Syntax for Simple commands: <command>
