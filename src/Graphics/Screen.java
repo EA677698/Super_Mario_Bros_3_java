@@ -10,12 +10,9 @@ import Main.Global;
 import Main.GameTick;
 import Settings.Controls;
 import Settings.Settings;
-import Sound.BGM;
 import Elements.Manager;
-import Sound.SFX;
+
 import javax.imageio.ImageIO;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -110,7 +107,7 @@ public class Screen extends JPanel {
             }
             g.setFont(new Font("Arial",Font.BOLD, (int)(25*((getSize().width*getSize().height)/(1920.0*1080.0)))));
             g.drawString("FPS: "+fps,(int)(100*Window.scaleX),(int)(100*Window.scaleY));
-            g.drawString("CPS: "+ GameTick.cps,(int)(100*Window.scaleX),(int)(125*Window.scaleY));
+            g.drawString("TPS: "+ GameTick.tps,(int)(100*Window.scaleX),(int)(125*Window.scaleY));
         }
         if(Settings.hitBoxes){
             g.setColor(Color.GREEN);

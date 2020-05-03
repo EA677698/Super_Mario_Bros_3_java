@@ -223,7 +223,7 @@ public class Manager {
         }
     }
 
-    public static void calling(){
+    public static void culling(){
         for(Entity entity: Manager.ents){
             if(!screen.intersects(entity.getHitBox())&&!screen.contains(entity.getHitBox())){
                 entity.setUnloaded(true);
@@ -247,7 +247,7 @@ public class Manager {
         }
         sideScroll();
         collision();
-        calling();
+        culling();
         if(Settings.debug&&!Controls.console){
             deleteSelected();
         }

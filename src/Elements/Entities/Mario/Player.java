@@ -127,7 +127,8 @@ public class Player extends Entity {
             }
         }
     }
-
+// INVESTIGATE WALK AND SLOW DOWN AND SIDE SCROLLING METHOD
+// MOVEMENT PROBLEMS ARE IN THERE
     private void walk(){
         changeSprite();
         if (!Controls.alt) {
@@ -148,9 +149,10 @@ public class Player extends Entity {
     }
 
     private void slowDown(){
-        if(System.nanoTime()-slowDownTimer>500000000){
+        if(System.nanoTime()-slowDownTimer>300000000){
             if(getXVelocity()>0.0){
                 setXVelocity(getXVelocity()-1);
+                slowDownTimer = System.nanoTime();
             }
         }
     }

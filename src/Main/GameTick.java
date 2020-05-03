@@ -19,7 +19,7 @@ public class GameTick implements Runnable {
 
     private Thread thread;
     static final int DEFAULT_CLIP = 1;
-    public static int cps = 0;
+    public static int tps = 0;
     public static int count = 0;
     double timer = System.nanoTime();
     public static boolean clipReset;
@@ -74,7 +74,7 @@ public class GameTick implements Runnable {
             }
             Window.screen.repaint();
             if(System.nanoTime()-timer>1000000000){
-                cps = count;
+                tps = count;
                 count = 0;
                 timer = System.nanoTime();
             }

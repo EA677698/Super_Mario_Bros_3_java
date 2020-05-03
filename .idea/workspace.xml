@@ -7,119 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d39f5f7-8a79-4c18-8666-a2834b076462" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Mario_Bros_Attempt_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Mario_Bros_Attempt_3_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Elements.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/Enemy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/Goomba.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/HammerBro.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/KoopaTroopa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Enemies/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Entity.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Mario/Player.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Mario/Powers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Mario/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Mario/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/Mario/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/Coin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/Fireball.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/GreenMushroom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/NotLiving.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/RedMushroom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/NotLiving/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Entities/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Layer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Manager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Adjustables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/BigBlocks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Clouds.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Floor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Hill.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Interactables/Bricks.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Interactables/Interactable.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Interactables/LuckyBlock.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Interactables/Pipes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Interactables/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Interactables/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Interactables/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/LayeredTile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Shrub.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/Tile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/WoodenBlock.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/Tiles/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Elements/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/FileManager/Loader.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/FileManager/Write.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/FileManager/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/FileManager/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/FileManager/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Graphics/Screen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Graphics/Window.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Graphics/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Graphics/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Graphics/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main/Cards.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main/GameTick.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main/Global.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Main/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Settings/Controls.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Settings/Settings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Settings/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Settings/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Settings/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Sound/BGM.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Sound/SFX.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Sound/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Sound/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/Sound/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-16.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-17.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-18.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-19.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-20.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-21.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/overview-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/serialized-form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDocs/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mario.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Mario/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Mario/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Mario/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Mario/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphics/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/GameTick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GameTick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings/Settings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,10 +152,6 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1583262779734" />
-    <state x="523" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579285010685">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="523" y="235" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1579285010685" />
     <state x="517" y="270" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1583262241662">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -270,10 +164,6 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="217" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1583262727754" />
-    <state x="449" y="168" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579714644364">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="449" y="168" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1579714644364" />
     <state x="566" y="317" width="403" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583854043950">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -306,89 +196,83 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="747" y="56" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1583436735239" />
-    <state x="1020" y="165" key="CommitChangelistDialog2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1579828280497" />
     <state x="2606" y="234" key="FileChooserDialogImpl" timestamp="1586025314715">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584036633956" />
-    <state x="686" y="234" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1579828536057" />
     <state x="2606" y="234" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586025314715" />
     <state x="600" y="327" key="Github.ShareDialog" timestamp="1584036673778">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="600" y="327" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1584036673778" />
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1586200606868">
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1588223034124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606868" />
-    <state width="1877" height="154" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586198093010" />
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1586200606867">
+    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1588223034124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606867" />
-    <state width="1877" height="154" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586198093010" />
+    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1586200606867">
+    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1588223034124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584122995769" />
-    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606867" />
-    <state width="1877" height="154" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586198093009" />
+    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1586200606867">
+    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1588223034124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606867" />
-    <state width="1877" height="154" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586198093010" />
+    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1586200606868">
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1588223034125">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606868" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586197045266" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034125" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222619558" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041799" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1586200606868">
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1588223034124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606868" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586197045266" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222619558" />
     <state width="1877" height="363" key="GridCell.Tab.1.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041799" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1586200606868">
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1588223034124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606868" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586197045266" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222619558" />
     <state width="1877" height="363" key="GridCell.Tab.1.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041798" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1586200606868">
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1588223034124">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586200606868" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586197045266" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222619558" />
     <state width="1877" height="363" key="GridCell.Tab.1.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041799" />
     <state x="709" y="331" key="SettingsEditor" timestamp="1586025223795">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582910308991" />
     <state x="709" y="331" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586025223795" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1586884597743">
+    <state x="581" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1588532750919">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="465" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584123042884" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586884597743" />
-    <state x="2501" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586025245597" />
+    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588532750919" />
+    <state x="2501" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587762506252" />
     <state x="581" y="320" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244270684" />
     <state x="769" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585110974026">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="769" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585110974026" />
-    <state x="462" y="37" width="611" height="789" key="find.popup" timestamp="1579797312708">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="462" y="37" width="611" height="789" key="find.popup/0.0.1536.864@0.0.1536.864" timestamp="1579797312708" />
     <state x="261" y="68" key="new project wizard" timestamp="1586884622230">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
