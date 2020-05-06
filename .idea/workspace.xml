@@ -8,16 +8,18 @@
   <component name="ChangeListManager">
     <list default="true" id="8d39f5f7-8a79-4c18-8666-a2834b076462" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Executeable/Mario Bros 3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Executeable/Mario Bros 3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Mario_Bros_Attempt_3_jar/Mario Bros Attempt 3.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Mario/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Mario/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/Global$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/Global$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/Global.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/Global.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Mario/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Mario/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/GameTick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GameTick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Global.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,32 +207,32 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="600" y="327" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1584036673778" />
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1588223034124">
+    <state width="1877" height="154" key="GridCell.Tab.0.bottom" timestamp="1588806608877">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="154" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588806608877" />
     <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1588223034124">
+    <state width="1877" height="154" key="GridCell.Tab.0.center" timestamp="1588806608877">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="154" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588806608877" />
     <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1588223034124">
+    <state width="1877" height="154" key="GridCell.Tab.0.left" timestamp="1588806608877">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584122995769" />
-    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="154" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588806608877" />
     <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1588223034124">
+    <state width="1877" height="154" key="GridCell.Tab.0.right" timestamp="1588806608877">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1478" height="203" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588223034124" />
+    <state width="1877" height="154" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588806608877" />
     <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588222615955" />
     <state width="1877" height="154" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
     <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1588223034125">
@@ -262,23 +264,23 @@
     </state>
     <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582910308991" />
     <state x="709" y="331" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586025223795" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1588532750919">
+    <state x="581" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1588806726745">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="465" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584123042884" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588532750919" />
+    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1588806726745" />
     <state x="2501" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587762506252" />
     <state x="581" y="320" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244270684" />
     <state x="769" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585110974026">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="769" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585110974026" />
-    <state x="261" y="68" key="new project wizard" timestamp="1586884622230">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="2181" y="68" key="new project wizard" timestamp="1588532986894">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="209" y="54" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1583847390997" />
     <state x="261" y="68" key="new project wizard/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1586884622230" />
-    <state x="2181" y="68" key="new project wizard/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586025316345" />
+    <state x="2181" y="68" key="new project wizard/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588532986894" />
     <state x="425" y="197" key="run.anything.popup" timestamp="1583947077928">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

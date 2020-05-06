@@ -128,6 +128,7 @@ public class Screen extends JPanel {
                 g.drawRect((int)(Manager.selectedTile.getLocation().x*Window.scaleX), (int)(Manager.selectedTile.getLocation().y*Window.scaleY), (int)(Manager.selectedTile.getWidth()*Window.scaleX), (int)(Manager.selectedTile.getHeight()*Window.scaleY));
             }
         }
+       // g.drawLine(0,300,1920,300);
         if(System.nanoTime()-timer>1000000000){
             fps = count;
             count = 0;

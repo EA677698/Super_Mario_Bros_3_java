@@ -17,14 +17,17 @@ public class Global {
     public static final String localPath = System.getProperty("user.dir");
 
 
-
     public static void HUDcheck(){
         if(Manager.player!=null){
             active = new boolean[7];
             int temp = (int)Manager.player.getXVelocity();
-            for(int i = 0; temp>4; i++){
+            for(int i = 1; temp>4; i++){
                 active[i] = true;
                 temp--;
+// FIX SPEED METER VVVVV TEMP SOLUTION!!!!!
+                if(active[1]){
+                    active[0] = true;
+                }
             }
         }
         if(money>=100){

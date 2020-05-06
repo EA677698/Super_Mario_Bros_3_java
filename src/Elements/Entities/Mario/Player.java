@@ -29,7 +29,7 @@ public class Player extends Entity {
         super(layer, coordinates, width, height, hasCollision);
         power = Powers.SMALL;
         this.setEntityName("Mario");
-        this.setXVelocity(5);
+        this.setXVelocity(0);
         this.setYVelocity(0);
         totalYCount = 0;
     }
@@ -38,7 +38,7 @@ public class Player extends Entity {
         super(layer, coordinates, width, height, life, damage, hasGravity, hasCollision);
         power = Powers.SMALL;
         this.setEntityName("Mario");
-        this.setXVelocity(5);
+        this.setXVelocity(0);
         this.setYVelocity(0);
         totalYCount = 0;
     }
@@ -47,7 +47,7 @@ public class Player extends Entity {
         super(layer, coordinates, width, height, life, damage, speed, gravity, hasGravity, hasCollision);
         power = Powers.SMALL;
         this.setEntityName("Mario");
-        this.setXVelocity(5);
+        this.setXVelocity(0);
         this.setYVelocity(0);
         totalYCount = 0;
     }
@@ -83,6 +83,11 @@ public class Player extends Entity {
                 }
                 movementTimer = System.nanoTime();
             }
+            if(!offGround&&getXVelocity()>0){
+                changeSprite();
+            } else if(!offGround&&getXVelocity()==0){
+                setSprite(0);
+            }
             if(Controls.right){
                 setDirection(1);
                 walk();
@@ -93,7 +98,6 @@ public class Player extends Entity {
                 previousDirection = getDirection();
             } else {
                 slowDown();
-                setSprite(0);
             }
             if(getYVelocity()>-1){
                 totalYCount = 0;
@@ -127,10 +131,8 @@ public class Player extends Entity {
             }
         }
     }
-// INVESTIGATE WALK AND SLOW DOWN AND SIDE SCROLLING METHOD
-// MOVEMENT PROBLEMS ARE IN THERE
+
     private void walk(){
-        changeSprite();
         if (!Controls.alt) {
             if(System.nanoTime()-runTimer>300000000) {
                 if (getXVelocity() < OG_SPEED) {
@@ -149,7 +151,7 @@ public class Player extends Entity {
     }
 
     private void slowDown(){
-        if(System.nanoTime()-slowDownTimer>300000000){
+        if(System.nanoTime()-slowDownTimer>200000000){
             if(getXVelocity()>0.0){
                 setXVelocity(getXVelocity()-1);
                 slowDownTimer = System.nanoTime();
@@ -203,7 +205,7 @@ public class Player extends Entity {
     }
 
     private void changeSprite(){
-        if (System.nanoTime() - spriteTimer > 100000000) {
+        if (System.nanoTime() - spriteTimer > 100000000*(5/(getXVelocity()+.01))) {
             if (getCurrentSprite() == 1) {
                 setSprite(0);
             } else {

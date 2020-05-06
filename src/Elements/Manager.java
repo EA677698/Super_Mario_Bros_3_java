@@ -429,22 +429,24 @@ public class Manager {
                     }
                 }
             }
-            if(player.isMiddle()&&Controls.right){
+            if(player.isMiddle()){
                 for(Entity ent: ents){
                     if(ent!=player){
                         ent.addX((int)(-1*player.getXVelocity()));
                     }
                 }
+                System.out.println(player.getXVelocity());
                 for(Tile tile : tiles){
                     tile.addX((int)(-1*player.getXVelocity()));
                 }
             } else {
-                if(player.isStart()&&Controls.left){
+                if(player.isStart()){
                     for(Entity ent: ents){
                         if(ent!=player){
                             ent.addX((int)player.getXVelocity());
                         }
                     }
+                    System.out.println(player.getXVelocity());
                     for(Tile tile : tiles){
                         tile.addX((int)player.getXVelocity());
                     }
