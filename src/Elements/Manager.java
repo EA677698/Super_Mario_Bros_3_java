@@ -435,7 +435,6 @@ public class Manager {
                         ent.addX((int)(-1*player.getXVelocity()));
                     }
                 }
-                System.out.println(player.getXVelocity());
                 for(Tile tile : tiles){
                     tile.addX((int)(-1*player.getXVelocity()));
                 }
@@ -446,7 +445,6 @@ public class Manager {
                             ent.addX((int)player.getXVelocity());
                         }
                     }
-                    System.out.println(player.getXVelocity());
                     for(Tile tile : tiles){
                         tile.addX((int)player.getXVelocity());
                     }
