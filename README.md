@@ -1,6 +1,6 @@
 # Super_Mario_Bros_3-master
 
-#### Join my [discord](https://discord.gg/G26wubP) for active development interaction!
+#### Join the project's [discord](https://discord.gg/G26wubP)!
 
 
 ## Controls
