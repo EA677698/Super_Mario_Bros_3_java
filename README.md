@@ -1,5 +1,6 @@
 # Super_Mario_Bros_3-master
 
+#### Join the project's [discord](https://discord.gg/G26wubP)!
 
 
 ## Controls
