@@ -509,8 +509,10 @@ public class Manager {
                                 if(ent.isFacingTile(tile)){
                                     if(ent instanceof Player){
                                         if(ent.getDirection()==1){
+                                            player.setXVelocity(0);
                                             Controls.right = false;
                                         } else {
+                                            player.setXVelocity(0);
                                             Controls.left = false;
                                         }
                                     } else {

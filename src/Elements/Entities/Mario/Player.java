@@ -74,12 +74,13 @@ public class Player extends Entity {
             sideScrolling();
             if(System.nanoTime()-movementTimer>10000000){
                 addX((int)(getXVelocity()*getDirection()));
-                if(!offGround &&Controls.jump){
-                    jump();
+                setYVelocity(-12);
+                if(Controls.jump){
+                    setHasGravity(false);
                     setSprite(3);
+                    jump();
                 } else {
                     setHasGravity(true);
-                    offGround = true;
                 }
                 movementTimer = System.nanoTime();
             }
@@ -99,37 +100,13 @@ public class Player extends Entity {
             } else {
                 slowDown();
             }
-            if(getYVelocity()>-1){
-                totalYCount = 0;
-            }
-            if(getTouchingGround()>0){
-                heightCheck = false;
-                offGround = false;
-            } else {
-                setSprite(3);
-            }
         } else {
             death();
         }
     }
 
     private void jump(){
-        addY((int)getYVelocity());
-        if(getXVelocity()>MAX_SPEED-2&&!heightCheck&&totalYCount<(MAX_JUMP_HEIGHT*2)){
-            setYVelocity(-12);
-            totalYCount += 12;
-            setHasGravity(false);
-        } else if(!heightCheck&&totalYCount<MAX_JUMP_HEIGHT){
-            setYVelocity(-12);
-            totalYCount += 12;
-            setHasGravity(false);
-        } else {
-            heightCheck = true;
-            setYVelocity(getYVelocity()+1);
-            if(getYVelocity()<0){
-                setHasGravity(true);
-            }
-        }
+        addY((int) getYVelocity());
     }
 
     private void walk(){
