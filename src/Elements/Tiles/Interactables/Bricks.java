@@ -39,7 +39,7 @@ public class Bricks extends Interactable {
                     executeOnTouch();
                 }
             }
-            if(System.nanoTime()-timer>100000000){
+            if(System.nanoTime()-timer>200000000){
                 setCurrentSprite(getCurrentSprite()+1);
                 if(getCurrentSprite()>3){
                     setCurrentSprite(0);

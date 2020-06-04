@@ -27,6 +27,7 @@ public class Screen extends JPanel {
     public int count = 0;
     public boolean error;
     public double timer = System.nanoTime();
+    private static String debugMessages;
     public final CopyOnWriteArrayList<Elements> layer1 = new CopyOnWriteArrayList<>();
     public final CopyOnWriteArrayList<Elements> layer2 = new CopyOnWriteArrayList<>();
     public final CopyOnWriteArrayList<Elements> layer3 = new CopyOnWriteArrayList<>();
@@ -35,6 +36,7 @@ public class Screen extends JPanel {
     Image board, speed, power, crt;
     public static HashMap<Integer,Image> nums;
     public Screen(){
+        debugMessages = new String();
         nums = new HashMap<>();
         try {
             background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+currentBackground+".png"));
@@ -153,7 +155,12 @@ public class Screen extends JPanel {
         if(Settings.crt){
             g.drawImage(crt,0,0,(int)(1920*Window.scaleX),(int)(1080*Window.scaleY),this);
         }
+            g.drawString(debugMessages,100,100);
         g.setColor(Color.GREEN);
+    }
+
+    public static void debugPrint(String message){
+        debugMessages = message;
     }
 
     public void scaling(){

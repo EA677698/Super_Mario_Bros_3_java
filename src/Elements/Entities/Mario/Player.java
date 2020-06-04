@@ -12,17 +12,18 @@ import java.io.IOException;
 public class Player extends Entity {
 
     private Powers power;
-    private static final int OG_SPEED = 4;
+    private static final int WALK_SPEED = 4;
     private static final int MAX_SPEED = 10;
-    private static final int MAX_JUMP_HEIGHT = 300;
-    private int previousDirection, totalYCount;
+    private static final int MAX_JUMP_SPEED = -11;
+    private int previousDirection;
     private double movementTimer = System.nanoTime();
     private double slowDownTimer = System.nanoTime();
     private double spriteTimer = System.nanoTime();
     private double speedTimer = System.nanoTime();
     private double runTimer = System.nanoTime();
     private double deathTimer = System.nanoTime();
-    private boolean flag, middle, start, middleH, startH, heightCheck, offGround;
+    private double jumpTimer = System.nanoTime();
+    private boolean flag, middle, start, middleH, startH, initialJump;
     private Image[] smallMario, bigMario;
 
     public Player(Layer layer, Point coordinates, int width, int height, boolean hasCollision) {
@@ -31,7 +32,6 @@ public class Player extends Entity {
         this.setEntityName("Mario");
         this.setXVelocity(0);
         this.setYVelocity(0);
-        totalYCount = 0;
     }
 
     public Player(Layer layer, Point coordinates, int width, int height, int life, int damage, boolean hasGravity, boolean hasCollision) {
@@ -40,7 +40,6 @@ public class Player extends Entity {
         this.setEntityName("Mario");
         this.setXVelocity(0);
         this.setYVelocity(0);
-        totalYCount = 0;
     }
 
     public Player(Layer layer, Point coordinates, int width, int height, int life, int damage, double speed, double gravity, boolean hasGravity, boolean hasCollision) {
@@ -49,7 +48,6 @@ public class Player extends Entity {
         this.setEntityName("Mario");
         this.setXVelocity(0);
         this.setYVelocity(0);
-        totalYCount = 0;
     }
 
     public void initializeImages(){
@@ -74,19 +72,25 @@ public class Player extends Entity {
             sideScrolling();
             if(System.nanoTime()-movementTimer>10000000){
                 addX((int)(getXVelocity()*getDirection()));
-                setYVelocity(-12);
                 if(Controls.jump){
-                    setHasGravity(false);
-                    setSprite(3);
+                    if(initialJump){
+                        setYVelocity(MAX_JUMP_SPEED);
+                        setHasGravity(false);
+                        setSprite(3);
+                        initialJump = false;
+                    }
                     jump();
                 } else {
                     setHasGravity(true);
                 }
                 movementTimer = System.nanoTime();
             }
-            if(!offGround&&getXVelocity()>0){
+            if(!isOffGround()){
+                initialJump = true;
+            }
+            if(!isOffGround()&&getXVelocity()>0){
                 changeSprite();
-            } else if(!offGround&&getXVelocity()==0){
+            } else if(!isOffGround()&&getXVelocity()==0) {
                 setSprite(0);
             }
             if(Controls.right){
@@ -107,19 +111,27 @@ public class Player extends Entity {
 
     private void jump(){
         addY((int) getYVelocity());
+        if(System.nanoTime()-jumpTimer>37000000){
+            if(getYVelocity()<0){
+                setYVelocity(getYVelocity()+1);
+            } else {
+                setHasGravity(true);
+            }
+            jumpTimer = System.nanoTime();
+        }
     }
 
     private void walk(){
         if (!Controls.alt) {
             if(System.nanoTime()-runTimer>300000000) {
-                if (getXVelocity() < OG_SPEED) {
+                if (getXVelocity() < WALK_SPEED) {
                     setXVelocity(getXVelocity() + 1);
-                } else if (getXVelocity() > OG_SPEED) {
+                } else if (getXVelocity() > WALK_SPEED) {
                     setXVelocity(getXVelocity() - 1);
                 }
                 runTimer = System.nanoTime();
             }
-        } else if(System.nanoTime()-speedTimer>100000000) {
+        } else if(System.nanoTime()-speedTimer>100000000 &&!isOffGround()) {
             if(getXVelocity()<MAX_SPEED){
                 setXVelocity(getXVelocity()+1);
             }
@@ -208,6 +220,7 @@ public class Player extends Entity {
             deathTimer = System.nanoTime();
         }
     }
+
 
     public Powers getPower() {
         return power;

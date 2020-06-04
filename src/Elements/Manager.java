@@ -224,6 +224,7 @@ public class Manager {
     }
 
     public static void culling(){
+        //Checks to see if the element is within the screen's boundaries otherwise it unloads it
         for(Entity entity: Manager.ents){
             if(!screen.intersects(entity.getHitBox())&&!screen.contains(entity.getHitBox())){
                 entity.setUnloaded(true);
@@ -460,6 +461,7 @@ public class Manager {
                 if(player!=null){
                     if(ent instanceof Enemy){
                         if(System.nanoTime()-hitTimer>2000000000){
+                            // If an enemy hits mario from his sides
                             int side = ent.getHitBox().outcode(player.getHitBox().getCenterX(),player.getHitBox().getCenterY());
                             if(player.getHitBox().intersects(ent.getHitBox())){
                                 if(side==1||side==4){
@@ -483,12 +485,14 @@ public class Manager {
                                 }
                             }
                         }
+                        //Activates Non Living Entity Special Action towards Mario
                     } else if(ent instanceof NotLiving){
                         if(ent.getHitBox().intersects(player.getHitBox())){
                             ((NotLiving) ent).executeUponTouch(player);
                         }
                     }
                 }
+                //If two entities collide
                 for(Entity ent2: Manager.ents){
                     if(ent!=ent2) {
                         if (ent2.isCollision() && !ent2.isUnloaded()) {
@@ -504,6 +508,7 @@ public class Manager {
                 for(Tile tile : tiles){
                     if(tile.isCollision()&&!tile.isUnloaded()){
                         if(tile.getHitBox().intersects(ent.getHitBox())){
+                            //If an entity hits something from his sides while moving
                             int side = tile.getHitBox().outcode(ent.getHitBox().getCenterX(),ent.getHitBox().getCenterY());
                             if(!(tile instanceof BigBlocks)&&(side==1||side==4||side==9||side==12)){
                                 if(ent.isFacingTile(tile)){
@@ -518,10 +523,11 @@ public class Manager {
                                     } else {
                                         ent.setDirection(ent.getDirection()*-1);
                                     }
-                                }
+                                } //If Mario Hits something above him while jumping
                             } else if(side==8||side==9||side==12){
                                 if(ent instanceof Player){
-                                    Controls.jump = false;
+                                    ent.setYVelocity(0);
+                                    ent.setHasGravity(true);
                                 }
                             }
                         }

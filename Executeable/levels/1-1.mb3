@@ -1,6 +1,6 @@
 BGM,2,
 Background,2,
-Mario,MIDDLE_LAYER,926,704,56,80,1,1,0.0,9.8,true,true,
+Mario,MIDDLE_LAYER,926,704,56,80,1,1,0.0,1,true,true,
 Platform,MIDDLE_LAYER,780,780,true,39,0,
 Hill,BACK_LAYER,900,540,false,2,6,
 Hill,BACK_LAYER,840,600,false,2,4,

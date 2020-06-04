@@ -64,7 +64,7 @@ public class GameTick implements Runnable {
                 if(!ent.isUnloaded()){
                     ent.tick();
                 }
-                ent.callingException();
+                ent.cullingException();
             }
             for(Tile tile:Manager.tiles){
                 if(!tile.isUnloaded()){

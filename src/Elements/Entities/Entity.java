@@ -8,6 +8,8 @@ import Graphics.Window;
 import Main.Global;
 import Elements.Tiles.Tile;
 
+import static Graphics.Screen.debugPrint;
+
 
 public abstract class Entity extends Elements {
 
@@ -17,10 +19,9 @@ public abstract class Entity extends Elements {
     private double XVelocity, YVelocity, gravity;
     private double gravityTimer = System.nanoTime();
     private Rectangle hitBox;
-    private boolean isSelected,hasGravity;
     private boolean allowedMoving = true;
     private boolean isDead = false;
-    private boolean collision;
+    private boolean collision, offGround, isSelected, hasGravity;
     private String entityName;
     private final String localPath = Global.localPath;
 
@@ -34,7 +35,7 @@ public abstract class Entity extends Elements {
         hasGravity = true;
         damage = 1;
         XVelocity = 1.0;
-        gravity = 9.8;
+        gravity = 1;
         hitBox = new Rectangle(location.x, location.y,width,height);
         initializeImages();
     }
@@ -49,7 +50,7 @@ public abstract class Entity extends Elements {
         this.hasGravity = hasGravity;
         XVelocity = 1.0;
         collision = hasCollision;
-        gravity = 9.8;
+        gravity = 1;
         hitBox = new Rectangle(location.x, location.y,width,height);
         initializeImages();
     }
@@ -70,24 +71,29 @@ public abstract class Entity extends Elements {
     }
 
     public void tick(){
-        if(hasGravity){
-            touchingGround = 0;
-            for(Tile tile: Manager.tiles){
-                if(tile.isCollision()){
-                    int side = tile.getHitBox().outcode(hitBox.getCenterX(),hitBox.getCenterY());
-                    if(hitBox.intersects(tile.getHitBox())&&(side==2||side==3||side==6)){
-                        touchingGround++;
-                    }
+        touchingGround = 0;
+        for(Tile tile: Manager.tiles){
+            if(tile.isCollision()){
+                int side = tile.getHitBox().outcode(hitBox.getCenterX(),hitBox.getCenterY());
+                if(hitBox.intersects(tile.getHitBox())&&(side==2||side==3||side==6)){
+                    touchingGround++;
                 }
             }
-            if(touchingGround==0&&!isSelected&&System.nanoTime()-gravityTimer>800000){
-                addY((int)(gravity/9));
+        }
+        if(touchingGround>0){
+            offGround = false;
+        } else {
+            offGround = true;
+        }
+        if(hasGravity){
+            if(touchingGround==0&&!isSelected&&System.nanoTime()-gravityTimer>1200000){
+                addY((int)(gravity));
                 gravityTimer = System.nanoTime();
             }
         }
     }
 
-    public void callingException(){
+    public void cullingException(){
         hitBox.setLocation(location.x, location.y);
         hitBox.setSize(width-20,height);
     }
@@ -120,6 +126,14 @@ public abstract class Entity extends Elements {
             return this.getDirection() == 1;
         }
         return false;
+    }
+
+    public void setOffGround(boolean bool){
+        offGround = bool;
+    }
+
+    public boolean isOffGround(){
+        return offGround;
     }
 
     public int getTouchingGround(){
