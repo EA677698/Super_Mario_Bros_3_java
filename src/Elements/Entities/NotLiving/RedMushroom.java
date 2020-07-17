@@ -4,16 +4,11 @@ import Elements.Manager;
 import Elements.Entities.Mario.Player;
 import Elements.Entities.Mario.Powers;
 import Elements.Layer;
+import Main.Main;
 import Sound.SFX;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class RedMushroom extends NotLiving {
-
-    private Image red;
 
     public RedMushroom(Layer layer, Point coordinates, int width, int height, int direction, boolean hasCollision) {
         super(layer, coordinates, width, height, direction,hasCollision);
@@ -50,16 +45,7 @@ public class RedMushroom extends NotLiving {
     }
 
     @Override
-    public void initializeImages() {
-        try {
-            red = ImageIO.read(new File(getLocalPath()+"\\assets\\Entities\\PowerUps\\bigMushroom.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public Image getSprite() {
-        return red;
+        return Main.game.getSpritesLoader().getMushrooms()[1];
     }
 }

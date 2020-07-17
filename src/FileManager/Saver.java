@@ -8,10 +8,7 @@ import Graphics.Screen;
 import Main.GameTick;
 import Main.Global;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 
 public class Saver {
 
@@ -37,5 +34,22 @@ public class Saver {
             e.printStackTrace();
         }
     }
+
+    public static void createALevel(){
+        try {
+        FileOutputStream fileOut = new FileOutputStream(Global.localPath+"\\levels\\"+world+"-"+level+".mb3");
+        ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            for(Entity entity : Manager.ents){
+                objectOut.writeObject(entity);
+            }
+            for(Tile tile : Manager.tiles){
+                objectOut.writeObject(tile);
+            }
+        objectOut.close();
+        System.out.println("Successfully saved");
+
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }}
 
 }

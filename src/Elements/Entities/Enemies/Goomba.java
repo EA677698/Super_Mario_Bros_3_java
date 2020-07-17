@@ -1,14 +1,10 @@
 package Elements.Entities.Enemies;
 import Elements.Layer;
-
-import javax.imageio.ImageIO;
+import Main.Main;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class Goomba extends Enemy {
 
-    private Image[] goomb;
     private double timer = System.nanoTime();
     private double timer2 = System.nanoTime();
 
@@ -56,18 +52,8 @@ public class Goomba extends Enemy {
     }
 
     @Override
-    public void initializeImages() {
-        goomb = new Image[3];
-        for(int i = 0; i<goomb.length; i++){
-            try {
-                goomb[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Entities\\Minions\\Goomba\\"+(i+1)+".png"));
-            } catch (IOException e) {e.printStackTrace();}
-        }
-    }
-
-    @Override
     public Image[] getImages() {
-        return goomb;
+        return Main.game.getSpritesLoader().getGoomba();
     }
 
     @Override
@@ -80,6 +66,6 @@ public class Goomba extends Enemy {
             }
             timer2 = System.nanoTime();
         }
-        return goomb[getCurrentSprite()];
+        return Main.game.getSpritesLoader().getGoomba()[getCurrentSprite()];
     }
 }

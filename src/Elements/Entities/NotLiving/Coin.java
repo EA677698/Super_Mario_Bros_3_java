@@ -4,16 +4,12 @@ import Elements.Manager;
 import Elements.Entities.Mario.Player;
 import Elements.Layer;
 import Main.Global;
+import Main.Main;
 import Sound.SFX;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class Coin extends NotLiving {
 
-    private Image[] coins;
     private double timer = System.nanoTime();
 
     public Coin(Layer layer, Point coordinates, int width, int height, int direction, boolean hasCollision) {
@@ -46,18 +42,8 @@ public class Coin extends NotLiving {
     }
 
     @Override
-    public void initializeImages() {
-        coins = new Image[3];
-        for(int i = 0; i<coins.length; i++){
-            try {
-                coins[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Entities\\Coin\\"+(i+1)+".png"));
-            } catch (IOException e) {e.printStackTrace();}
-        }
-    }
-
-    @Override
     public Image[] getImages() {
-        return coins;
+        return Main.game.getSpritesLoader().getCoins();
     }
 
     @Override
@@ -69,6 +55,6 @@ public class Coin extends NotLiving {
             }
             timer = System.nanoTime();
         }
-        return coins[getCurrentSprite()];
+        return Main.game.getSpritesLoader().getCoins()[getCurrentSprite()];
     }
 }

@@ -5,6 +5,8 @@ import Elements.Entities.Entity;
 import Elements.Tiles.Interactables.Interactable;
 import Elements.Tiles.LayeredTile;
 import Elements.Tiles.Tile;
+import Elements.Tiles.Tools.Clip;
+import Elements.Tiles.Tools.Trigger;
 import Main.Cards;
 import Main.Global;
 import Main.GameTick;
@@ -31,6 +33,8 @@ public class Screen extends JPanel {
     public final CopyOnWriteArrayList<Elements> layer1 = new CopyOnWriteArrayList<>();
     public final CopyOnWriteArrayList<Elements> layer2 = new CopyOnWriteArrayList<>();
     public final CopyOnWriteArrayList<Elements> layer3 = new CopyOnWriteArrayList<>();
+    Color clipColor = new Color(255,0,0,100);
+    Color triggerColor = new Color(169, 169, 169, 100);
     public static Image background;
     public static int currentBackground = 2;
     Image board, speed, power, crt;
@@ -96,6 +100,16 @@ public class Screen extends JPanel {
             for(int i = 0; i<33; i++){
                 g.drawLine((int)((i*60)*Window.scaleX),0,(int)((i*60)*Window.scaleX),(int)(1080*Window.scaleY));
             }
+            for(Tile tool: Manager.tiles){
+                if(tool instanceof Clip){
+                    g.setColor(clipColor);
+                    g.fillRect(tool.getLocation().x,tool.getLocation().y,tool.getWidth(),tool.getHeight());
+                }
+                if(tool instanceof Trigger){
+                    g.setColor(triggerColor);
+                    g.fillRect(tool.getLocation().x,tool.getLocation().y,tool.getWidth(),tool.getHeight());
+                }
+            }
             g.setColor(Color.RED);
             g.drawString("Entity Count: "+ Manager.ents.size(),(int)(1000*Window.scaleX),(int)(20*Window.scaleY));
         }
@@ -149,7 +163,7 @@ public class Screen extends JPanel {
             Controls.enter = false;
             Controls.console = false;
             input = input.replace("\n", "").replace("\r", "");
-            error = Manager.commandInput(input);
+            error = Manager.commandInput(input.toLowerCase());
             input = "";
         }
         if(Settings.crt){

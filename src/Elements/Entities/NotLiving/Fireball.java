@@ -3,17 +3,13 @@ package Elements.Entities.NotLiving;
 import Elements.Entities.Mario.Player;
 import Elements.Entities.Mario.Powers;
 import Elements.Layer;
+import Main.Main;
 import Sound.BGM;
 import Sound.SFX;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class Fireball extends NotLiving {
 
-    private Image[] fireballs;
     private double timer = System.nanoTime();
     private double moveTimer = System.nanoTime();
     private double hitTimer = System.nanoTime();
@@ -74,23 +70,11 @@ public class Fireball extends NotLiving {
 
     @Override
     public Image[] getImages() {
-        return fireballs;
-    }
-
-    @Override
-    public void initializeImages() {
-        fireballs = new Image[4];
-        for(int i = 0; i<4; i++){
-            try {
-                fireballs[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Entities\\Minions\\Fireball\\"+(i+1)+".png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        return Main.game.getSpritesLoader().getFireballs();
     }
 
     @Override
     public Image getSprite() {
-        return fireballs[getCurrentSprite()];
+        return Main.game.getSpritesLoader().getFireballs()[getCurrentSprite()];
     }
 }

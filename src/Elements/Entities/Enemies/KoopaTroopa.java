@@ -1,15 +1,10 @@
 package Elements.Entities.Enemies;
 import Elements.Layer;
-
-import javax.imageio.ImageIO;
+import Main.Main;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
-@SuppressWarnings("SpellCheckingInspection")
 public class KoopaTroopa extends Enemy {
 
-    private Image[] koop;
     private double timer = System.nanoTime();
     private double timer2 = System.nanoTime();
 
@@ -58,17 +53,7 @@ public class KoopaTroopa extends Enemy {
 
     @Override
     public Image[] getImages() {
-        return koop;
-    }
-
-    @Override
-    public void initializeImages() {
-        koop = new Image[7];
-        for(int i = 0; i<koop.length; i++){
-            try {
-                koop[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Entities\\Minions\\Koopatroopa\\"+(i+1)+".png"));
-            } catch (IOException e) {e.printStackTrace();}
-        }
+        return Main.game.getSpritesLoader().getKoopaTroopa();
     }
 
     @Override
@@ -81,6 +66,6 @@ public class KoopaTroopa extends Enemy {
             }
             timer2 = System.nanoTime();
         }
-        return koop[getCurrentSprite()];
+        return Main.game.getSpritesLoader().getKoopaTroopa()[getCurrentSprite()];
     }
 }

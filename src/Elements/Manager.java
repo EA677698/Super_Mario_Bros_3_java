@@ -6,6 +6,8 @@ import Elements.Entities.Mario.Powers;
 import Elements.Entities.NotLiving.*;
 import Elements.Tiles.*;
 import Elements.Tiles.Interactables.Pipes;
+import Elements.Tiles.Tools.Clip;
+import Elements.Tiles.Tools.Trigger;
 import FileManager.Loader;
 import FileManager.Saver;
 import Main.GameTick;
@@ -68,7 +70,7 @@ public class Manager {
                 case "save":
                     Saver.world = Integer.parseInt(end.substring(0,end.indexOf(" ")));
                     Saver.level = Integer.parseInt(end.substring(end.indexOf(" ")+1));
-                    Saver.createLevel();
+                    Saver.createALevel();
                     return true;
                 case "load":
                     Loader.loadLevel(end);
@@ -274,7 +276,13 @@ public class Manager {
     }
 
     public static boolean spawnElement(String element){
-        switch (element){
+        String temp = "";
+        if(element.contains(" ")){
+            temp = element.substring(0, element.indexOf(" "));
+        } else {
+            temp = element;
+        }
+        switch (temp){
             case "mario":
                 marioCheck();
                 ents.add(new Player(Layer.MIDDLE_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2),60,60, true));
@@ -336,6 +344,14 @@ public class Manager {
             case  "shrub":
                 tiles.add(new Shrub(Layer.BACK_LAYER,new Point(Window.screenWidth/2,Window.screenHeight/2),true));
                 return true;
+            case "clip":
+               tiles.add(new Clip(Layer.FRONT_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2),0,1));
+               return true;
+            case "trigger":
+                String command = element.substring(element.indexOf(" ")+1, element.lastIndexOf(" "));
+                int activations = Integer.parseInt(element.substring(element.lastIndexOf(" ")+1));
+                tiles.add(new Trigger(Layer.FRONT_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2), 0,1, command, activations));
+                return true;
         }
         if(customEntities.containsKey(element)){ ;
             try {
@@ -358,6 +374,9 @@ public class Manager {
     public static void deleteSelected(){
         if(selectedEntity!=null){
             if(Controls.delete){
+                if(selectedEntity==player){
+                    marioCheck();
+                }
                 selectedEntity.removeFromLayer();
                 ents.remove(selectedEntity);
                 selectedEntity = null;

@@ -14,6 +14,8 @@ import Elements.Tiles.*;
 import Elements.Tiles.Interactables.Bricks;
 import Elements.Tiles.Interactables.LuckyBlock;
 import Elements.Tiles.Interactables.Pipes;
+import Elements.Tiles.Tools.Clip;
+import Elements.Tiles.Tools.Trigger;
 import Main.GameTick;
 import Main.Global;
 import Graphics.Screen;
@@ -139,10 +141,19 @@ public class Loader {
                 Manager.tiles.add(new Shrub(Layer.valueOf(parameters[1]),new Point(Integer.parseInt(parameters[2]),Integer.parseInt(parameters[3])),
                         Boolean.parseBoolean(parameters[4])));
                 break;
+            case "Clip":
+                Manager.tiles.add(new Clip(Layer.valueOf(parameters[1]),new Point(Integer.parseInt(parameters[2]),Integer.parseInt(parameters[3])),
+                        Integer.parseInt(parameters[5]),Integer.parseInt(parameters[6])));
+                break;
+            case "Trigger":
+                Manager.tiles.add(new Trigger(Layer.valueOf(parameters[1]),new Point(Integer.parseInt(parameters[2]),Integer.parseInt(parameters[3])),
+                        Integer.parseInt(parameters[5]),Integer.parseInt(parameters[6]),parameters[7],Integer.parseInt(parameters[8])));
+                break;
         }
     }
 
     public static void unloadLevel(){
+        Manager.player = null;
         for(Entity entity: Manager.ents){
             entity.removeFromLayer();
             Manager.ents.remove(entity);

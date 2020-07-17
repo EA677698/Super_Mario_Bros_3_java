@@ -1,27 +1,10 @@
+Version 0.2.8
+
 Bug Fixes:
+- None
 
-	- Bug where the game wouldn't check if an Entity was on the ground 
-	if the gravity was turned off
+Additions and Changes:
 
-	- Remade Jumping
-
-	- Any lower value than 9 for gravity would not make gravity work
-
-	- Mario gaining x axis velocity while in the air
-
-	-
-
-New Additions and changes:
-
-	- Functional Jumping
-
-	- Debug message tool
-
-	- Adjusted Gravity on entities
-
-	- Comments to remind myself (Author) what some code means
-
-	- Made it so that the game no longer blocks the jump key when Mario hits something
-	above his head but instead made it so that his velocity is set to 0 and his gravity is enabled
-
-	- Changed sprite animation speed for bricks
+- Entity Images are now loaded from one class object which should improve performance and how levels are saved.
+- Version numbers
+- Code Optimization

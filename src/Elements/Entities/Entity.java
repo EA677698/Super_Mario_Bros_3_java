@@ -8,9 +8,6 @@ import Graphics.Window;
 import Main.Global;
 import Elements.Tiles.Tile;
 
-import static Graphics.Screen.debugPrint;
-
-
 public abstract class Entity extends Elements {
 
     private Point location;
@@ -37,7 +34,6 @@ public abstract class Entity extends Elements {
         XVelocity = 1.0;
         gravity = 1;
         hitBox = new Rectangle(location.x, location.y,width,height);
-        initializeImages();
     }
 
     public Entity(Layer layer, Point coordinates, int width, int height, int life, int damage, boolean hasGravity, boolean hasCollision){
@@ -52,7 +48,6 @@ public abstract class Entity extends Elements {
         collision = hasCollision;
         gravity = 1;
         hitBox = new Rectangle(location.x, location.y,width,height);
-        initializeImages();
     }
 
     public Entity(Layer layer, Point coordinates, int width, int height, int life, int damage, double XVelocity, double gravity, boolean hasGravity, boolean hasCollision){
@@ -67,7 +62,6 @@ public abstract class Entity extends Elements {
         this.gravity = gravity;
         this.hasGravity = hasGravity;
         hitBox = new Rectangle(location.x, location.y,width,height);
-        initializeImages();
     }
 
     public void tick(){
@@ -80,11 +74,7 @@ public abstract class Entity extends Elements {
                 }
             }
         }
-        if(touchingGround>0){
-            offGround = false;
-        } else {
-            offGround = true;
-        }
+        offGround = touchingGround <= 0;
         if(hasGravity){
             if(touchingGround==0&&!isSelected&&System.nanoTime()-gravityTimer>1200000){
                 addY((int)(gravity));
@@ -149,8 +139,6 @@ public abstract class Entity extends Elements {
     }
 
     public abstract void death();
-
-    public abstract void initializeImages();
 
     public abstract Image getSprite();
 
@@ -269,7 +257,6 @@ public abstract class Entity extends Elements {
         return localPath;
     }
 
-    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean isCollision() {
         return collision;
     }

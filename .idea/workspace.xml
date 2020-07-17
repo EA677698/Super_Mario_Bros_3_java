@@ -7,23 +7,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d39f5f7-8a79-4c18-8666-a2834b076462" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Elements/Tiles/Tools/Clip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Elements/Tiles/Tools/Tool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Elements/Tiles/Tools/Trigger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Graphics/SpritesLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Erick.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Erick.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Executeable/levels/1-0.mb3" beforeDir="false" afterPath="$PROJECT_DIR$/Executeable/levels/1-0.mb3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Executeable/levels/1-1.mb3" beforeDir="false" afterPath="$PROJECT_DIR$/Executeable/levels/1-1.mb3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/1-0.mb3" beforeDir="false" afterPath="$PROJECT_DIR$/levels/1-0.mb3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Changelog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/levels/1-1.mb3" beforeDir="false" afterPath="$PROJECT_DIR$/levels/1-1.mb3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Mario_Bros_Attempt_3_jar/Mario Bros Attempt 3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Mario_Bros_Attempt_3_jar/Mario Bros Attempt 3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/Goomba.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/Goomba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/HammerBro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/HammerBro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/KoopaTroopa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/KoopaTroopa.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Mario/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Mario/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/GreenMushroom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/GreenMushroom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/RedMushroom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/RedMushroom.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/Bricks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/Bricks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Loader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Saver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Saver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/META-INF/Mario Bros Attempt 3.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Enemies/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Enemies/Goomba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Enemies/Goomba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Enemies/HammerBro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Enemies/HammerBro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Enemies/KoopaTroopa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Enemies/KoopaTroopa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Mario/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Mario/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Fireball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/GreenMushroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/GreenMushroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/RedMushroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/RedMushroom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/Bricks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/Bricks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileManager/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileManager/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileManager/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileManager/Saver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Screen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/GameTick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GameTick.java" afterDir="false" />
     </list>
@@ -64,7 +91,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -147,160 +174,77 @@
     <option name="LAST_COMMIT_MESSAGE" value="adding files&#10;&#10;Signed-off-by: EA &lt;eafc677698@gmail.com&gt;" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="404" y="111" key="#Inspections" timestamp="1583967978761">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="404" y="111" key="#Inspections/0.0.1536.864@0.0.1536.864" timestamp="1583967978761" />
     <state x="2371" y="115" key="#Project_Structure" timestamp="1590533893608">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="361" y="92" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1583262740494" />
     <state x="451" y="115" key="#Project_Structure/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1587753143916" />
     <state x="2371" y="115" key="#Project_Structure/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590533893608" />
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583262779734">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1583262779734" />
-    <state x="517" y="270" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1583262241662">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="517" y="270" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.864@0.0.1536.864" timestamp="1583262241662" />
-    <state x="797" y="199" key="#com.intellij.ide.util.MemberChooser" timestamp="1583938627400">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="797" y="199" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1583938627400" />
-    <state x="499" y="217" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583262727754">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="499" y="217" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.864@0.0.1536.864" timestamp="1583262727754" />
-    <state x="566" y="317" width="403" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583854043950">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="566" y="317" width="403" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.864@0.0.1536.864" timestamp="1583854043950" />
-    <state x="676" y="250" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1585110890708">
+    <state x="996" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1594959878964">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="676" y="250" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585110890708" />
-    <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584109988708">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="996" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1594959878964" />
+    <state width="1877" height="136" key="GridCell.Tab.0.bottom" timestamp="1594960817990">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="224" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.864@0.0.1536.864" timestamp="1584109988708" />
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583884382952">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="136" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1594960817990" />
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state width="1877" height="136" key="GridCell.Tab.0.center" timestamp="1594960817990">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="499" y="179" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1583884382952" />
-    <state x="277" y="0" key="#org.jetbrains.kotlin.idea.refactoring.safeDelete.KotlinOverridingDialog" timestamp="1583436003164">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="136" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1594960817990" />
+    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state width="1877" height="136" key="GridCell.Tab.0.left" timestamp="1594960817990">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="277" y="0" key="#org.jetbrains.kotlin.idea.refactoring.safeDelete.KotlinOverridingDialog/0.0.1536.864@0.0.1536.864" timestamp="1583436003164" />
-    <state x="685" y="156" key="#xdebugger.evaluate" timestamp="1583947417189">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="136" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1594960817990" />
+    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state width="1877" height="136" key="GridCell.Tab.0.right" timestamp="1594960817990">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="685" y="156" key="#xdebugger.evaluate/0.0.1536.864@0.0.1536.864" timestamp="1583947417189" />
-    <state x="526" y="179" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584036635519">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="526" y="179" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.864@0.0.1536.864" timestamp="1584036635519" />
-    <state x="747" y="56" key="CommitChangelistDialog2" timestamp="1583436735239">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="747" y="56" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1583436735239" />
-    <state x="2606" y="234" key="FileChooserDialogImpl" timestamp="1586025314715">
+    <state width="1877" height="136" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1594960817990" />
+    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1591398430667">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1584036633956" />
-    <state x="2606" y="234" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586025314715" />
-    <state x="600" y="327" key="Github.ShareDialog" timestamp="1584036673778">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591395579445" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1591398430667">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="600" y="327" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1584036673778" />
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1591302315836">
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591395579444" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1591398430667">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591395579444" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1591398430667">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591395579444" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1591398430667" />
+    <state x="540" y="276" key="IDE.errors.dialog" timestamp="1594959036094">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1478" height="203" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315836" />
-    <state width="1877" height="154" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590535353371" />
-    <state width="1877" height="154" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1591302315836">
+    <state x="540" y="276" key="IDE.errors.dialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1594959036094" />
+    <state x="461" y="183" key="SettingsEditor" timestamp="1594957966361">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1478" height="203" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315836" />
-    <state width="1877" height="154" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590535353371" />
-    <state width="1877" height="154" key="GridCell.Tab.0.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1591302315836">
+    <state x="461" y="183" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1594957966361" />
+    <state x="2501" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1594961225068">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591390515673" />
+    <state x="2501" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594961225068" />
+    <state x="261" y="68" key="new project wizard" timestamp="1591483433940">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1478" height="203" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1584122995769" />
-    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315836" />
-    <state width="1877" height="154" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590535353370" />
-    <state width="1877" height="154" key="GridCell.Tab.0.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1591302315836">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1478" height="203" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1584122995770" />
-    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315836" />
-    <state width="1877" height="154" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590535353371" />
-    <state width="1877" height="154" key="GridCell.Tab.0.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244797477" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1591302315837">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315837" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588963950509" />
-    <state width="1877" height="363" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041799" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1591302315836">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315836" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588963950509" />
-    <state width="1877" height="363" key="GridCell.Tab.1.center/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041799" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1591302315836">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315836" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588963950509" />
-    <state width="1877" height="363" key="GridCell.Tab.1.left/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041798" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1591302315836">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591302315836" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588963950509" />
-    <state width="1877" height="363" key="GridCell.Tab.1.right/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585112041799" />
-    <state x="709" y="331" key="SettingsEditor" timestamp="1586025223795">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="277" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582910308991" />
-    <state x="709" y="331" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1586025223795" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1591295497963">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="465" y="256" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1584123042884" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591295497963" />
-    <state x="2501" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588980156260" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585244270684" />
-    <state x="769" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585110974026">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="769" y="458" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585110974026" />
-    <state x="261" y="68" key="new project wizard" timestamp="1589585215194">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="209" y="54" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1583847390997" />
-    <state x="261" y="68" key="new project wizard/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1589585215194" />
+    <state x="261" y="68" key="new project wizard/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591483433940" />
     <state x="2181" y="68" key="new project wizard/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588532986894" />
-    <state x="425" y="197" key="run.anything.popup" timestamp="1583947077928">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="425" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1583947077928" />
-    <state x="593" y="231" width="840" height="848" key="search.everywhere.popup" timestamp="1585111567527">
+    <state x="531" y="246" key="run.anything.popup" timestamp="1591392995202">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="474" y="185" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1584122066698" />
-    <state x="593" y="231" width="840" height="848" key="search.everywhere.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1585111567527" />
-    <state x="599" y="224" key="svn.repositoryBrowser" timestamp="1583266049090">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="599" y="224" key="svn.repositoryBrowser/0.0.1536.864@0.0.1536.864" timestamp="1583266049090" />
+    <state x="531" y="246" key="run.anything.popup/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1591392995202" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

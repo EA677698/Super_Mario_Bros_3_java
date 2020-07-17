@@ -2,12 +2,9 @@ package Elements.Entities.Mario;
 
 import Elements.Entities.Entity;
 import Elements.Layer;
+import Main.Main;
 import Settings.Controls;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class Player extends Entity {
 
@@ -24,7 +21,6 @@ public class Player extends Entity {
     private double deathTimer = System.nanoTime();
     private double jumpTimer = System.nanoTime();
     private boolean flag, middle, start, middleH, startH, initialJump;
-    private Image[] smallMario, bigMario;
 
     public Player(Layer layer, Point coordinates, int width, int height, boolean hasCollision) {
         super(layer, coordinates, width, height, hasCollision);
@@ -48,21 +44,6 @@ public class Player extends Entity {
         this.setEntityName("Mario");
         this.setXVelocity(0);
         this.setYVelocity(0);
-    }
-
-    public void initializeImages(){
-        smallMario = new Image[18];
-        for(int i = 0; i<smallMario.length; i++){
-            try {
-                smallMario[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Entities\\Mario\\smallMario\\"+(i+1)+".png"));
-            } catch (IOException e) {e.printStackTrace();}
-        }
-        bigMario = new Image[23];
-        for(int i = 0; i<bigMario.length; i++){
-            try {
-                bigMario[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Entities\\Mario\\bigMario\\"+(i+1)+".png"));
-            } catch (IOException e) {e.printStackTrace();}
-        }
     }
 
     @Override
@@ -180,7 +161,7 @@ public class Player extends Entity {
         if(getPower()==Powers.SMALL){
             flag = false;
             setHeight(80);
-            return smallMario[getCurrentSprite()];
+            return Main.game.getSpritesLoader().getSmallMario()[getCurrentSprite()];
         } else if(getPower() == Powers.BIG){
             //setHeight(getHeight()+20);
             if(!flag){
@@ -188,7 +169,7 @@ public class Player extends Entity {
                 addY(-40);
                 flag = true;
             }
-            return bigMario[getCurrentSprite()];
+            return Main.game.getSpritesLoader().getBigMario()[getCurrentSprite()];
         }
         return null;
     }
@@ -206,9 +187,9 @@ public class Player extends Entity {
 
     @Override
     public Image[] getImages() {
-        Image[] images = new Image[smallMario.length+bigMario.length];
-        System.arraycopy(smallMario, 0, images, 0, smallMario.length);
-        System.arraycopy(bigMario, 0, images, smallMario.length, bigMario.length);
+        Image[] images = new Image[Main.game.getSpritesLoader().getSmallMario().length+Main.game.getSpritesLoader().getBigMario().length];
+        System.arraycopy(Main.game.getSpritesLoader().getSmallMario(), 0, images, 0, Main.game.getSpritesLoader().getSmallMario().length);
+        System.arraycopy(Main.game.getSpritesLoader().getBigMario(), 0, images, Main.game.getSpritesLoader().getSmallMario().length, Main.game.getSpritesLoader().getBigMario().length);
         return images;
     }
 

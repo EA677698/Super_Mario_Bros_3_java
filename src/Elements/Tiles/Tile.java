@@ -26,7 +26,6 @@ public abstract class Tile extends Elements {
     }
 
     public void tick(){
-
     }
 
     public void callingException(){

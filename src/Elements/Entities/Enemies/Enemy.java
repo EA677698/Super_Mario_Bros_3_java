@@ -31,11 +31,6 @@ public abstract class Enemy extends Entity {
     }
 
     @Override
-    public void initializeImages() {
-
-    }
-
-    @Override
     public Image getSprite() {
         if(getBaseSprite()!=null){
             return getBaseSprite();

@@ -1,4 +1,4 @@
-# Super_Mario_Bros_3-master
+# Super_Mario_Bros_3-master v0.2.8
 
 #### Join the project's [discord](https://discord.gg/G26wubP)!
 

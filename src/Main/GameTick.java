@@ -2,6 +2,7 @@ package Main;
 
 import Elements.Entities.Entity;
 import Elements.Manager;
+import Graphics.SpritesLoader;
 import Graphics.Window;
 import Settings.Controls;
 import Settings.Settings;
@@ -26,15 +27,14 @@ public class GameTick implements Runnable {
     static SFX sfx;
     static BGM bgm;
 
+    private final SpritesLoader spritesLoader = new SpritesLoader();
+    final Window window = new Window();
+
     static {
         try {
             sfx = new SFX();
             bgm = new BGM();
-        } catch (UnsupportedAudioFileException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (LineUnavailableException e) {
+        } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
             e.printStackTrace();
         }
     }
@@ -45,7 +45,7 @@ public class GameTick implements Runnable {
     private boolean running;
 
     public GameTick(){
-        Window window = new Window();
+
     }
 
     @Override
@@ -111,6 +111,10 @@ public class GameTick implements Runnable {
         } else if(Settings.muted){
             clipReset = false;
         }
+    }
+
+    public SpritesLoader getSpritesLoader() {
+        return spritesLoader;
     }
 
 }
