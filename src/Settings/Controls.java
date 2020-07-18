@@ -36,11 +36,7 @@ public class Controls implements KeyListener, MouseMotionListener, MouseListener
     }
 
     public void letterInput(String letter){
-        if(delete){
-            try {
-                Window.screen.input = Window.screen.input.substring(0,Window.screen.input.length()-1);
-            } catch (StringIndexOutOfBoundsException e){}
-        } else if(!letter.equals("`")) {
+        if(!letter.equals("`")) {
             Window.screen.input += letter;
         }
     }
@@ -48,16 +44,18 @@ public class Controls implements KeyListener, MouseMotionListener, MouseListener
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+        if (console) {
+            if (delete) {
+                Window.screen.input = Window.screen.input.substring(0, Window.screen.input.length() - 1);
+            } else if (e.getKeyCode() != KeyEvent.VK_SHIFT) {
+                letterInput(String.valueOf(e.getKeyChar()));
+            }
+        }
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         keys[e.getKeyCode()] = true;
-        if(console){
-            if(!delete)
-                letterInput(String.valueOf(e.getKeyChar()));
-        }
     }
 
     @Override

@@ -4,13 +4,12 @@ import Elements.Entities.Entity;
 import Elements.Manager;
 import Graphics.SpritesLoader;
 import Graphics.Window;
+import Level.*;
 import Settings.Controls;
 import Settings.Settings;
-import Sound.BGM;
+import Sound.BGMPlayer;
 import Elements.Tiles.Tile;
 import Sound.SFX;
-
-import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
@@ -19,40 +18,33 @@ import java.io.IOException;
 public class GameTick implements Runnable {
 
     private Thread thread;
-    static final int DEFAULT_CLIP = 1;
     public static int tps = 0;
     public static int count = 0;
     double timer = System.nanoTime();
     public static boolean clipReset;
     static SFX sfx;
-    static BGM bgm;
+
+    BGMPlayer bgmPlayer;
 
     private final SpritesLoader spritesLoader = new SpritesLoader();
-    final Window window = new Window();
+    Window window;
 
-    static {
+    private boolean running;
+
+    public GameTick(){
         try {
             sfx = new SFX();
-            bgm = new BGM();
+            bgmPlayer = new BGMPlayer(BGM.GRASS_LAND);
+            Manager.level = new Level(Background.AQUA_BACKGROUND, BGM.GRASS_LAND);
+            window = new Window();
         } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static Clip currentClip;
-    public static int clipID;
-
-    private boolean running;
-
-    public GameTick(){
-
-    }
-
     @Override
     public void run() {
-        currentClip = BGM.integerToClip(1);
-        currentClip.start();
-        clipID = 1;
+        bgmPlayer.getMusic().start();
         while(running){
             count++;
             Controls.tick();
@@ -99,15 +91,13 @@ public class GameTick implements Runnable {
         }
     }
 
-    public static void soundManager(String bgmID){
+    public void muteBGM(){
         if(!Settings.muted&&!clipReset){
-            if(currentClip!=null) {
-                currentClip.setFramePosition(0);
-                currentClip.stop();
+            if(bgmPlayer.getMusic()!=null) {
+                bgmPlayer.getMusic().setFramePosition(0);
+                bgmPlayer.getMusic().stop();
             }
-            currentClip = BGM.integerToClip(Integer.parseInt(bgmID));
-            clipID = Integer.parseInt(bgmID);
-            currentClip.start();
+            bgmPlayer.getMusic().start();
         } else if(Settings.muted){
             clipReset = false;
         }
@@ -115,6 +105,10 @@ public class GameTick implements Runnable {
 
     public SpritesLoader getSpritesLoader() {
         return spritesLoader;
+    }
+
+    public BGMPlayer getBgmPlayer() {
+        return bgmPlayer;
     }
 
 }

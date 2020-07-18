@@ -4,25 +4,20 @@ import Elements.Layer;
 import Elements.Manager;
 import Elements.Tiles.Adjustables;
 import Elements.Tiles.LayeredTile;
+import Main.Main;
 import Settings.Controls;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class Pipes extends Interactable implements LayeredTile, Adjustables {
 
     private int blocks;
     private double timer = System.nanoTime();
     private Pipes connectionPipe;
-    private Image top1,top2,bottom1,bottom2;
 
     public Pipes(Layer layer, Point location, boolean collision, int blocks) {
         super(layer, location, collision);
         this.blocks = blocks;
         setTileName("Pipe");
-        initializeImages();
         this.setWidth(120);
         this.setHeight(((blocks/2)+1)*60);
     }
@@ -60,25 +55,13 @@ public class Pipes extends Interactable implements LayeredTile, Adjustables {
     }
 
     @Override
-    public void initializeImages() {
-        try {
-            top1 = ImageIO.read(new File(getLocalPath() + "\\assets\\Tiles\\pipes\\1.png"));
-            top2 = ImageIO.read(new File(getLocalPath() + "\\assets\\Tiles\\pipes\\2.png"));
-            bottom1 = ImageIO.read(new File(getLocalPath() + "\\assets\\Tiles\\pipes\\3.png"));
-            bottom2 = ImageIO.read(new File(getLocalPath() + "\\assets\\Tiles\\pipes\\4.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public Image[] getSprites() {
         Image[] ret = new Image[2+blocks];
-        ret[0] = top1;
-        ret[1] = top2;
+        ret[0] = Main.game.getSpritesLoader().getPipes()[0];
+        ret[1] = Main.game.getSpritesLoader().getPipes()[1];
         for(int i = 2; i+1<ret.length; i++){
-            ret[i] = bottom1;
-            ret[i+1] = bottom2;
+            ret[i] = Main.game.getSpritesLoader().getPipes()[2];
+            ret[i+1] = Main.game.getSpritesLoader().getPipes()[3];
         }
 
         return ret;
@@ -87,11 +70,11 @@ public class Pipes extends Interactable implements LayeredTile, Adjustables {
     @Override
     public Image[][] get2DSprites() {
         Image[][] ret = new Image[(2+blocks)/2][2];
-        ret[0][0] = top1;
-        ret[0][1] = top2;
+        ret[0][0] = Main.game.getSpritesLoader().getPipes()[0];
+        ret[0][1] = Main.game.getSpritesLoader().getPipes()[1];
         for(int i = 1; i<ret.length; i++){
-            ret[i][0] = bottom1;
-            ret[i][1] = bottom2;
+            ret[i][0] = Main.game.getSpritesLoader().getPipes()[2];
+            ret[i][1] = Main.game.getSpritesLoader().getPipes()[3];
         }
         return ret;
     }

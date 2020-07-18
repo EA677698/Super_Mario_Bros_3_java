@@ -1,7 +1,6 @@
 package Elements;
 
 import Graphics.Window;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
@@ -28,6 +27,7 @@ public abstract class Elements implements Serializable {
                 Window.screen.layer3.add(this);
                 break;
         }
+        Manager.saveObjects.add(this);
     }
 
     public Image createSprite(String url){
@@ -37,6 +37,20 @@ public abstract class Elements implements Serializable {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public void reloadLayer(){
+        switch (layer){
+            case BACK_LAYER:
+                Window.screen.layer1.add(this);
+                break;
+            case MIDDLE_LAYER:
+                Window.screen.layer2.add(this);
+                break;
+            case FRONT_LAYER:
+                Window.screen.layer3.add(this);
+                break;
+        }
     }
 
     public void removeFromLayer(){

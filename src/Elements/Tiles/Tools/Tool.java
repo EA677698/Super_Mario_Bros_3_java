@@ -30,11 +30,6 @@ public class Tool extends Tile implements Adjustables, LayeredTile {
         }
     }
 
-    @Override
-    public void initializeImages() {
-
-    }
-
 
     @Override
     public Image[] getSprites() {

@@ -1,12 +1,10 @@
 package Elements.Tiles;
 
 import Elements.Layer;
-
+import Main.Main;
 import java.awt.*;
 
 public class Shrub extends Tile {
-
-    Image[] sprite = new Image[1];
 
     public Shrub(Layer layer, Point location, boolean collision) {
         super(layer, location, collision);
@@ -14,13 +12,7 @@ public class Shrub extends Tile {
     }
 
     @Override
-    public void initializeImages() {
-
-    }
-
-    @Override
     public Image[] getSprites() {
-        sprite[0] = createSprite(getLocalPath()+"\\assets\\Tiles\\other\\shrub.png");
-        return sprite;
+        return Main.game.getSpritesLoader().getShrub();
     }
 }

@@ -3,7 +3,6 @@ package Elements.Tiles;
 import Elements.Elements;
 import Main.Global;
 import Elements.Layer;
-
 import java.awt.*;
 
 public abstract class Tile extends Elements {
@@ -21,7 +20,6 @@ public abstract class Tile extends Elements {
         super(layer, location);
         this.location = location;
         this.collision = collision;
-        initializeImages();
         hitBox = new Rectangle(location.x,location.y,width,height);
     }
 
@@ -32,8 +30,6 @@ public abstract class Tile extends Elements {
         hitBox.setLocation(getLocation().x,getLocation().y);
         hitBox.setSize(width,height);
     }
-
-    public abstract void initializeImages();
 
     public Point getLocation() {
         return location;

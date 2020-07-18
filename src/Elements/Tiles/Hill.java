@@ -2,18 +2,14 @@ package Elements.Tiles;
 
 import Elements.Layer;
 import Elements.Manager;
+import Main.Main;
 import Settings.Controls;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class Hill extends Tile implements LayeredTile,Adjustables {
 
     private final int type;
     private int blocks;
-    private Image top1,top2,bottom1,bottom2;
     private double timer = System.nanoTime();
 
     public Hill(Layer layer, Point location, boolean collision, int type, int blocks) {
@@ -23,7 +19,6 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
         }
         this.type = type;
         this.blocks = blocks;
-        initializeImages();
         setTileName("Hill");
         this.setWidth(120);
         this.setHeight(((blocks/2)+1)*60);
@@ -54,26 +49,11 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
         }
     }
 
-    @Override
-    public void initializeImages() {
+    private Image[] getTypeTextures(){
         if(type==1){
-            try {
-                top1 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\1-3.png"));
-                top2 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\1-4.png"));
-                bottom1 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\1-1.png"));
-                bottom2 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\1-2.png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if(type==2){
-            try {
-                top1 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\2-3.png"));
-                top2 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\2-4.png"));
-                bottom1 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\2-1.png"));
-                bottom2 = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\hills\\2-2.png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            return Main.game.getSpritesLoader().getHill1();
+        } else {
+            return Main.game.getSpritesLoader().getHill2();
         }
     }
 
@@ -88,11 +68,11 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
     @Override
     public Image[] getSprites() {
         Image[] ret = new Image[2+blocks];
-        ret[0] = top1;
-        ret[1] = top2;
+        ret[0] = getTypeTextures()[2];
+        ret[1] = getTypeTextures()[3];
         for(int i = 2; i+1<ret.length; i++){
-            ret[i] = bottom1;
-            ret[i+1] = bottom2;
+            ret[i] = getTypeTextures()[0];
+            ret[i+1] = getTypeTextures()[1];
         }
 
         return ret;
@@ -100,11 +80,11 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
 
     public Image[][] get2DSprites(){
         Image[][] ret = new Image[(2+blocks)/2][2];
-        ret[0][0] = top1;
-        ret[0][1] = top2;
+        ret[0][0] = getTypeTextures()[2];
+        ret[0][1] = getTypeTextures()[3];
         for(int i = 1; i<ret.length; i++){
-            ret[i][0] = bottom1;
-            ret[i][1] = bottom2;
+            ret[i][0] = getTypeTextures()[0];
+            ret[i][1] = getTypeTextures()[1];
         }
         return ret;
     }

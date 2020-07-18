@@ -4,10 +4,8 @@ import Elements.Entities.Entity;
 import Elements.Manager;
 import Elements.Entities.Mario.Powers;
 import Elements.Layer;
-
-import javax.imageio.ImageIO;
+import Main.Main;
 import java.awt.*;
-import java.io.File;
 
 public class Bricks extends Interactable {
 
@@ -75,21 +73,8 @@ public class Bricks extends Interactable {
     }
 
     @Override
-    public void initializeImages() {
-        blocks = new Image[5];
-        try{
-            for(int i = 0; i<4; i++){
-                blocks[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\blocks\\brick"+(i+1)+".png"));
-            }
-            blocks[4] = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\blocks\\lb5.png"));
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public Image[] getSprites() {
-        return blocks;
+        return Main.game.getSpritesLoader().getBricks();
     }
 
     public boolean isBreakable() {

@@ -2,7 +2,7 @@ package Elements.Tiles;
 
 import Elements.Layer;
 import Elements.Manager;
-import Main.Global;
+import Main.Main;
 import Settings.Controls;
 
 import java.awt.*;
@@ -12,7 +12,6 @@ public class Floor extends Tile implements Adjustables, LayeredTile{
     private double timerX = System.nanoTime();
     private double timerY = System.nanoTime();
     private int middleBlocks, layers;
-    private Image startBlock1, middleBlock1, endBlocks1, startBlock2, middleBlock2, endBlocks2;
 
     public Floor(Layer layer, Point location, boolean collision, int middleBlocks, int layers) {
         super(layer, location, collision);
@@ -58,23 +57,13 @@ public class Floor extends Tile implements Adjustables, LayeredTile{
     }
 
     @Override
-    public void initializeImages() {
-        startBlock1 = createSprite(Global.localPath+"\\assets\\Tiles\\platforms\\1-1.png");
-        middleBlock1 = createSprite(Global.localPath+"\\assets\\Tiles\\platforms\\1-2.png");
-        endBlocks1 = createSprite(Global.localPath+"\\assets\\Tiles\\platforms\\1-3.png");
-        startBlock2 = createSprite(Global.localPath+"\\assets\\Tiles\\platforms\\1-4.png");
-        middleBlock2 = createSprite(Global.localPath+"\\assets\\Tiles\\platforms\\1-5.png");
-        endBlocks2 = createSprite(Global.localPath+"\\assets\\Tiles\\platforms\\1-6.png");
-    }
-
-    @Override
     public Image[] getSprites() {
         Image[] blocks = new Image[middleBlocks+2];
-        blocks[0] = startBlock1;
+        blocks[0] = Main.game.getSpritesLoader().getFloor()[0];
         for(int i = 1; i<blocks.length-1; i++){
-            blocks[i] = middleBlock1;
+            blocks[i] = Main.game.getSpritesLoader().getFloor()[1];
         }
-        blocks[blocks.length-1] = endBlocks1;
+        blocks[blocks.length-1] = Main.game.getSpritesLoader().getFloor()[2];
         return blocks;
     }
 
@@ -82,19 +71,19 @@ public class Floor extends Tile implements Adjustables, LayeredTile{
     @Override
     public Image[][] get2DSprites() {
         Image[][] ret = new Image[1+layers][2+middleBlocks];
-        ret[0][0] = startBlock1;
+        ret[0][0] = Main.game.getSpritesLoader().getFloor()[0];
         for(int i = 1; i<ret[0].length-1; i++){
-            ret[0][i] = middleBlock1;
+            ret[0][i] = Main.game.getSpritesLoader().getFloor()[1];
         }
-        ret[0][ret[0].length-1] = endBlocks1;
+        ret[0][ret[0].length-1] = Main.game.getSpritesLoader().getFloor()[2];
         for(int i = 1; i<ret.length; i++){
             for(int e = 0; e<ret[0].length; e++){
                 if(e==0){
-                    ret[i][e] = startBlock2;
+                    ret[i][e] = Main.game.getSpritesLoader().getFloor()[3];
                 } else if(e==ret[0].length-1){
-                    ret[i][e] = endBlocks2;
+                    ret[i][e] = Main.game.getSpritesLoader().getFloor()[5];
                 } else {
-                    ret[i][e] = middleBlock2;
+                    ret[i][e] = Main.game.getSpritesLoader().getFloor()[4];
                 }
             }
         }

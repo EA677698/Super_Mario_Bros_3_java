@@ -4,7 +4,6 @@ import Elements.Entities.Mario.Player;
 import Elements.Entities.Mario.Powers;
 import Elements.Layer;
 import Main.Main;
-import Sound.BGM;
 import Sound.SFX;
 import java.awt.*;
 
@@ -27,7 +26,7 @@ public class Fireball extends NotLiving {
                 if(player.getHitBox().intersects(getHitBox())){
                     switch (player.getPower()){
                         case SMALL: player.setDead(true);
-                            BGM.two.stop();
+                            Main.game.getBgmPlayer().getMusic().stop();
                             SFX.down1.setFramePosition(0);
                             SFX.down1.start();
                             break;

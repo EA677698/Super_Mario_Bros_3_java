@@ -3,15 +3,11 @@ package Elements.Tiles.Interactables;
 import Elements.Entities.Entity;
 import Elements.Manager;
 import Elements.Layer;
-
-import javax.imageio.ImageIO;
+import Main.Main;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 public class LuckyBlock extends Interactable {
 
-    Image[] blocks;
     @SuppressWarnings("CanBeFinal")
     Entity containedEntity;
     private double timer = System.nanoTime();
@@ -66,25 +62,13 @@ public class LuckyBlock extends Interactable {
     }
 
     @Override
-    public void initializeImages() {
-        blocks = new Image[5];
-        for(int i = 0; i<blocks.length; i++){
-            try {
-                blocks[i] = ImageIO.read(new File(getLocalPath()+"\\assets\\Tiles\\blocks\\lb"+(i+1)+".png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Override
     public String toString() {
         return super.toString()+containedEntity;
     }
 
     @Override
     public Image[] getSprites() {
-        return blocks;
+        return Main.game.getSpritesLoader().getLuckyBlocks();
     }
 
 }

@@ -10,23 +10,21 @@ import Elements.Tiles.Tools.Clip;
 import Elements.Tiles.Tools.Trigger;
 import FileManager.Loader;
 import FileManager.Saver;
-import Main.GameTick;
+import Level.Level;
+import Level.BGM;
 import Main.Global;
+import Main.Main;
 import Settings.Controls;
 import Settings.Settings;
-import Sound.BGM;
 import Sound.SFX;
 import Graphics.Window;
 import Elements.Tiles.Interactables.Bricks;
 import Elements.Tiles.Interactables.LuckyBlock;
-import Graphics.Screen;
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import Level.Background;
 
 public class Manager {
 
@@ -35,8 +33,10 @@ public class Manager {
     public static int previousDirection;
     public static final CopyOnWriteArrayList<Entity> ents = new CopyOnWriteArrayList<>();
     public static final CopyOnWriteArrayList<Tile> tiles = new CopyOnWriteArrayList<>();
+    public static CopyOnWriteArrayList<Elements> saveObjects = new CopyOnWriteArrayList<>();
     public static final HashMap<String, Entity> customEntities = new HashMap<>();
     public static Player player;
+    public static Level level;
     public static Rectangle screen = new Rectangle(0,0,1920,1080);
     private static double timer1 = System.nanoTime();
     private static double hitTimer = System.nanoTime();
@@ -62,22 +62,22 @@ public class Manager {
                     return freezeElements(end);
                 case "background":
                     try {
-                        Screen.background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+end+".png"));
-                    } catch (IOException e) {
+                        level.setBackground(Background.valueOf(end));
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                     return true;
                 case "save":
                     Saver.world = Integer.parseInt(end.substring(0,end.indexOf(" ")));
                     Saver.level = Integer.parseInt(end.substring(end.indexOf(" ")+1));
-                    Saver.createALevel();
+                    Saver.createLevel();
                     return true;
                 case "load":
-                    Loader.loadLevel(end);
+                    //Loader.loadLevel(end);
+                    Loader.experimentalLoadLevel(end);
                     return true;
                 case "bgm":
-                    GameTick.clipReset = false;
-                    GameTick.soundManager(end);
+                    level.changeMusic(BGM.valueOf(end.toUpperCase()));
                     return true;
             }
         } else {
@@ -276,7 +276,7 @@ public class Manager {
     }
 
     public static boolean spawnElement(String element){
-        String temp = "";
+        String temp;
         if(element.contains(" ")){
             temp = element.substring(0, element.indexOf(" "));
         } else {
@@ -486,7 +486,7 @@ public class Manager {
                                 if(side==1||side==4){
                                     switch (player.getPower()){
                                         case SMALL: player.setDead(true);
-                                            BGM.two.stop();
+                                            Main.game.getBgmPlayer().getMusic().stop();
                                             SFX.down1.setFramePosition(0);
                                             SFX.down1.start();
                                             break;

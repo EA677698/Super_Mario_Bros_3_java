@@ -2,8 +2,8 @@ package Elements.Tiles;
 
 import Elements.Layer;
 import Elements.Manager;
+import Main.Main;
 import Settings.Controls;
-
 import java.awt.*;
 
 public class BigBlocks extends Tile implements Adjustables, LayeredTile {
@@ -13,9 +13,6 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
     private double timerY = System.nanoTime();
     private int extraYLayers;
     private int extraXLayers;
-    Image[] begin;
-    Image[] middle;
-    Image[] end;
 
     public BigBlocks(Layer layer, Point location, boolean collision, int type, int rows, int columns) {
         super(layer, location, collision);
@@ -23,7 +20,6 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
         extraYLayers = columns;
         extraXLayers = rows;
         setTileName("BigBlock");
-        initializeImages();
     }
 
     @Override
@@ -61,25 +57,12 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
         }
     }
 
-    @Override
-    public void initializeImages() {
-        String color;
+    private Image[] getTypeTextures(){
         switch (type){
-            case 1: color = "b";
-            break;
-            case 2: color = "p";
-            break;
-            case 3: color = "w";
-            break;
-            default: color = "g";
-        }
-        begin = new Image[3];
-        middle = new Image[3];
-        end = new Image[3];
-        for(int i = 0; i<3; i++){
-            begin[i] = createSprite(getLocalPath()+"\\assets\\Tiles\\blocks\\b"+color+(i+1)+"-"+1+".png");
-            middle[i] = createSprite(getLocalPath()+"\\assets\\Tiles\\blocks\\b"+color+(i+1)+"-"+2+".png");
-            end[i] = createSprite(getLocalPath()+"\\assets\\Tiles\\blocks\\b"+color+(i+1)+"-"+3+".png");
+            case 1: return Main.game.getSpritesLoader().getBb();
+            case 2: return Main.game.getSpritesLoader().getBp();
+            case 3: return Main.game.getSpritesLoader().getBw();
+            default: return Main.game.getSpritesLoader().getBg();
         }
     }
 
@@ -106,12 +89,12 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
         setHeight(180+(60*extraXLayers));
         Image[][] ret = new Image[3+extraXLayers][3];
         int index = 1;
-        ret[0] = begin;
+        ret[0] = new Image[]{getTypeTextures()[0], getTypeTextures()[1], getTypeTextures()[2]};
         for(int i = 0; i<extraXLayers+1; i++){
-            ret[index] = middle;
+            ret[index] = new Image[]{getTypeTextures()[3], getTypeTextures()[4], getTypeTextures()[5]};
             index++;
         }
-        ret[ret.length-1] = end;
+        ret[ret.length-1] = new Image[]{getTypeTextures()[6], getTypeTextures()[7], getTypeTextures()[8]};;
         Image[][] retFinal = new Image[ret.length][ret[0].length+extraYLayers];
         for(int i = 0; i<ret.length; i++){
             for(int e = retFinal[0].length-1; e>-1; e--){

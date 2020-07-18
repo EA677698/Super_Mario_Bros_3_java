@@ -13,7 +13,6 @@ import Main.GameTick;
 import Settings.Controls;
 import Settings.Settings;
 import Elements.Manager;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -35,15 +34,14 @@ public class Screen extends JPanel {
     public final CopyOnWriteArrayList<Elements> layer3 = new CopyOnWriteArrayList<>();
     Color clipColor = new Color(255,0,0,100);
     Color triggerColor = new Color(169, 169, 169, 100);
-    public static Image background;
-    public static int currentBackground = 2;
+    Image background;
     Image board, speed, power, crt;
     public static HashMap<Integer,Image> nums;
     public Screen(){
         debugMessages = new String();
         nums = new HashMap<>();
         try {
-            background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+currentBackground+".png"));
+            background = ImageIO.read(new File(Manager.level.getBackground().getURL()));
             board = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\main.png"));
             speed = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\speed.png"));
             power = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\p.png"));
@@ -211,15 +209,6 @@ public class Screen extends JPanel {
                     }
                 }
             }
-        }
-    }
-
-    public static void changeBackground(int inputBackground){
-        currentBackground = inputBackground;
-        try {
-            background = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+currentBackground+".png"));
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
