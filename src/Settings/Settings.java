@@ -1,6 +1,6 @@
 package Settings;
 
-import Elements.Manager;
+import Main.Main;
 
 public class Settings {
 
@@ -12,13 +12,13 @@ public class Settings {
 
     public static void tick(){
         if(!debug){
-            if(Manager.selectedEntity!=null){
-                Manager.selectedEntity.setSelected(false);
-                Manager.selectedEntity.setDirection(Manager.previousDirection);
-                Manager.selectedEntity = null;
+            if(Main.game.getManager().getSelectedEntity()!=null){
+                Main.game.getManager().getSelectedEntity().setSelected(false);
+                Main.game.getManager().getSelectedEntity().setDirection(Main.game.getManager().getPreviousDirection());
+                Main.game.getManager().setSelectedEntity(null);
             }
-            if(Manager.selectedTile!=null){
-                Manager.selectedTile = null;
+            if(Main.game.getManager().getSelectedTile()!=null){
+                Main.game.getManager().setSelectedTile(null);
             }
         }
     }

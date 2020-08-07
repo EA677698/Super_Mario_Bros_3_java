@@ -31,7 +31,7 @@ public class RedMushroom extends NotLiving {
         SFX.powerUp.setFramePosition(0);
         SFX.powerUp.start();
         removeFromLayer();
-        Manager.ents.remove(this);
+        Main.game.getManager().getEnts().remove(this);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class Pipes extends Interactable implements LayeredTile, Adjustables {
     public void tick() {
         super.tick();
         executeOnAction();
-        if(Manager.selectedTile==this){
+        if(Main.game.getManager().getSelectedTile()==this){
             changeHeight();
             changeLength();
         }
@@ -44,10 +44,10 @@ public class Pipes extends Interactable implements LayeredTile, Adjustables {
     @Override
     public void executeOnAction() {
         if(connectionPipe!=null){
-            if(Manager.player.getHitBox().intersects(this.getHitBox())){
-                if(Manager.player.getLocation().y<this.getLocation().y){
+            if(Main.game.getManager().getPlayer().getHitBox().intersects(this.getHitBox())){
+                if(Main.game.getManager().getPlayer().getLocation().y<this.getLocation().y){
                     if(Controls.down){
-                        Manager.player.setLocation(new Point(connectionPipe.getLocation().x,connectionPipe.getLocation().y));
+                        Main.game.getManager().getPlayer().setLocation(new Point(connectionPipe.getLocation().x,connectionPipe.getLocation().y));
                     }
                 }
             }

@@ -7,57 +7,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d39f5f7-8a79-4c18-8666-a2834b076462" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Level/BGM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Level/Background.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Level/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/1-1.mb3" beforeDir="false" afterPath="$PROJECT_DIR$/levels/1-1.mb3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Mario_Bros_Attempt_3_jar/Mario Bros Attempt 3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Mario_Bros_Attempt_3_jar/Mario Bros Attempt 3.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Elements$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Elements$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Elements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Elements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Fireball.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/HammerBro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Enemies/HammerBro.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Coin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/Coin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/GreenMushroom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/GreenMushroom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/RedMushroom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Entities/NotLiving/RedMushroom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/BigBlocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/BigBlocks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Clouds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Clouds.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Floor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Floor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Hill.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Hill.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/Bricks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/Bricks.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/LuckyBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/LuckyBlock.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/Pipes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Interactables/Pipes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Shrub.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Shrub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tools/Tool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tools/Tool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/WoodenBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/WoodenBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tools/Trigger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Elements/Tiles/Tools/Trigger.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Loader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Saver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/FileManager/Saver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/Screen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/SpritesLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Graphics/SpritesLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Level/BGM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Level/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Level/Level.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/GameTick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/Global.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Main/Global.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Controls.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Controls.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Sound/BGM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Settings/Settings.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Sound/BGMPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Mario Bros Attempt 3/Sound/BGMPlayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Elements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Elements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Fireball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Enemies/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Enemies/HammerBro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Enemies/HammerBro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/GreenMushroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/GreenMushroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/RedMushroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Entities/NotLiving/RedMushroom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/BigBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/BigBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Clouds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Clouds.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Floor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Hill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Hill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/Bricks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/Bricks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/LuckyBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/LuckyBlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/Pipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Interactables/Pipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Shrub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Shrub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Tile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Tools/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Tools/Tool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/WoodenBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/WoodenBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Elements/Tiles/Tools/Trigger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Elements/Tiles/Tools/Trigger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileManager/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileManager/Loader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileManager/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileManager/Saver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graphics/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graphics/SpritesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphics/SpritesLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Level/BGM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sound/BGM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Level/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/GameTick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GameTick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Global.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Settings/Controls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings/Controls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sound/BGM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sound/BGMPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Settings/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sound/BGMPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sound/BGMPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,36 +189,36 @@
     <state x="2371" y="115" key="#Project_Structure" timestamp="1590533893608">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="451" y="115" key="#Project_Structure/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1587753143916" />
     <state x="2371" y="115" key="#Project_Structure/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590533893608" />
-    <state x="996" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1595043019415">
+    <state x="996" y="249" key="#com.intellij.ide.util.MemberChooser" timestamp="1596837522525">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="996" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595043019415" />
+    <state x="996" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1596837522525" />
+    <state x="2916" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596836381484" />
     <state x="596" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595030745379">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="596" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595030745379" />
-    <state width="1876" height="363" key="GridCell.Tab.0.bottom" timestamp="1595043302530">
+    <state width="1876" height="153" key="GridCell.Tab.0.bottom" timestamp="1596839022521">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595043302530" />
-    <state width="1876" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595041362516" />
-    <state width="1876" height="363" key="GridCell.Tab.0.center" timestamp="1595043302530">
+    <state width="1876" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1596839022521" />
+    <state width="1876" height="153" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596836427761" />
+    <state width="1876" height="153" key="GridCell.Tab.0.center" timestamp="1596839022521">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595043302530" />
-    <state width="1876" height="153" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595041362515" />
-    <state width="1876" height="363" key="GridCell.Tab.0.left" timestamp="1595043302530">
+    <state width="1876" height="153" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1596839022521" />
+    <state width="1876" height="153" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596836427761" />
+    <state width="1876" height="153" key="GridCell.Tab.0.left" timestamp="1596839022521">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595043302530" />
-    <state width="1876" height="153" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595041362515" />
-    <state width="1876" height="363" key="GridCell.Tab.0.right" timestamp="1595043302530">
+    <state width="1876" height="153" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1596839022521" />
+    <state width="1876" height="153" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596836427761" />
+    <state width="1876" height="153" key="GridCell.Tab.0.right" timestamp="1596839022521">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595043302530" />
-    <state width="1876" height="153" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595041362515" />
+    <state width="1876" height="153" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1596839022521" />
+    <state width="1876" height="153" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596836427761" />
     <state width="1876" height="363" key="GridCell.Tab.1.bottom" timestamp="1595043302531">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -242,10 +247,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="675" y="249" key="SettingsEditor/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595023414647" />
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1595023433144">
+    <state x="581" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1595104395455">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595023433144" />
+    <state x="581" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1595104395455" />
     <state x="2501" y="320" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594961225068" />
     <state x="610" y="156" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595022964887">
       <screen x="0" y="0" width="1920" height="1080" />

@@ -7,6 +7,7 @@ import Elements.Elements;
 import Graphics.Window;
 import Main.Global;
 import Elements.Tiles.Tile;
+import Main.Main;
 
 public abstract class Entity extends Elements {
 
@@ -66,7 +67,7 @@ public abstract class Entity extends Elements {
 
     public void tick(){
         touchingGround = 0;
-        for(Tile tile: Manager.tiles){
+        for(Tile tile: Main.game.getManager().getTiles()){
             if(tile.isCollision()){
                 int side = tile.getHitBox().outcode(hitBox.getCenterX(),hitBox.getCenterY());
                 if(hitBox.intersects(tile.getHitBox())&&(side==2||side==3||side==6)){

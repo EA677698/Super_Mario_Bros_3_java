@@ -1,6 +1,8 @@
 package Elements;
 
 import Graphics.Window;
+import Main.Main;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
@@ -27,7 +29,7 @@ public abstract class Elements implements Serializable {
                 Window.screen.layer3.add(this);
                 break;
         }
-        Manager.saveObjects.add(this);
+        Main.game.getManager().getSavedObjects().add(this);
     }
 
     public Image createSprite(String url){

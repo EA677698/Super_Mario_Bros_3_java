@@ -3,6 +3,7 @@ package Elements.Entities.Enemies;
 import Elements.Entities.Entity;
 import Elements.Layer;
 import Elements.Manager;
+import Main.Main;
 
 import java.awt.*;
 
@@ -27,7 +28,7 @@ public abstract class Enemy extends Entity {
     public void death() {
         setDead(true);
         removeFromLayer();
-        Manager.ents.remove(this);
+        Main.game.getManager().getEnts().remove(this);
     }
 
     @Override

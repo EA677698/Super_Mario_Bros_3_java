@@ -23,9 +23,9 @@ public class LuckyBlock extends Interactable {
     public void tick() {
         super.tick();
         if(!isActivated()){
-            if(Manager.player!=null) {
-                if (Manager.player.getHitBox().intersects(getHitBox())) {
-                    if(getHitBox().outcode(Manager.player.getHitBox().getCenterX(),Manager.player.getHitBox().getCenterY())==8){
+            if(Main.game.getManager().getPlayer()!=null) {
+                if (Main.game.getManager().getPlayer().getHitBox().intersects(getHitBox())) {
+                    if(getHitBox().outcode(Main.game.getManager().getPlayer().getHitBox().getCenterX(),Main.game.getManager().getPlayer().getHitBox().getCenterY())==8){
                         executeOnTouch();
                     }
                 }
@@ -47,7 +47,7 @@ public class LuckyBlock extends Interactable {
         setActivated(true);
         if(containedEntity != null){
             containedEntity.setLocation(new Point(getLocation().x,getLocation().y));
-            Manager.ents.add(containedEntity);
+            Main.game.getManager().getEnts().add(containedEntity);
             if(System.nanoTime()-executeTimer>100000000){
                 containedEntity.changeLayer(Layer.MIDDLE_LAYER);
                 containedEntity.addY(-1);

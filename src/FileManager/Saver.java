@@ -2,6 +2,7 @@ package FileManager;
 
 import Elements.Manager;
 import Main.Global;
+import Main.Main;
 
 import java.io.*;
 
@@ -14,7 +15,7 @@ public class Saver {
         try {
             FileOutputStream file = new FileOutputStream(Global.localPath + "\\levels\\" + world + "-" + level + ".mb3");
             ObjectOutputStream writer = new ObjectOutputStream(file);
-            writer.writeObject(Manager.saveObjects);
+            writer.writeObject(Main.game.getManager().getSavedObjects());
             writer.close();
             System.out.println("Successfully saved");
 

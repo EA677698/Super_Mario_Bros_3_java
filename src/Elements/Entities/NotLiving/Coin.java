@@ -33,7 +33,7 @@ public class Coin extends NotLiving {
         SFX.coin.setFramePosition(0);
         SFX.coin.start();
         removeFromLayer();
-        Manager.ents.remove(this);
+        Main.game.getManager().getEnts().remove(this);
     }
 
     @Override

@@ -11,7 +11,7 @@ import Elements.Tiles.Tools.Trigger;
 import FileManager.Loader;
 import FileManager.Saver;
 import Level.Level;
-import Level.BGM;
+import Sound.BGM;
 import Main.Global;
 import Main.Main;
 import Settings.Controls;
@@ -28,27 +28,29 @@ import Level.Background;
 
 public class Manager {
 
-    public static Entity selectedEntity;
-    public static Tile selectedTile;
-    public static int previousDirection;
-    public static final CopyOnWriteArrayList<Entity> ents = new CopyOnWriteArrayList<>();
-    public static final CopyOnWriteArrayList<Tile> tiles = new CopyOnWriteArrayList<>();
-    public static CopyOnWriteArrayList<Elements> saveObjects = new CopyOnWriteArrayList<>();
-    public static final HashMap<String, Entity> customEntities = new HashMap<>();
-    public static Player player;
-    public static Level level;
-    public static Rectangle screen = new Rectangle(0,0,1920,1080);
-    private static double timer1 = System.nanoTime();
-    private static double hitTimer = System.nanoTime();
-    private static double debugScroll = System.nanoTime();
+    public Manager(){}
 
-    public static void registerEntity(String command, Entity entity){
+    private Entity selectedEntity;
+    private Tile selectedTile;
+    private int previousDirection;
+    private final CopyOnWriteArrayList<Entity> ents = new CopyOnWriteArrayList<>();
+    private final CopyOnWriteArrayList<Tile> tiles = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<Elements> saveObjects = new CopyOnWriteArrayList<>();
+    private final HashMap<String, Entity> customEntities = new HashMap<>();
+    private Player player;
+    private Level level;
+    private Rectangle screen = new Rectangle(0,0,1920,1080);
+    private double timer1 = System.nanoTime();
+    private double hitTimer = System.nanoTime();
+    private double debugScroll = System.nanoTime();
+
+    public void registerEntity(String command, Entity entity){
         customEntities.put(command,entity);
         entity.removeFromLayer();
     }
 
 
-    public static boolean commandInput(String input){
+    public boolean commandInput(String input){
         if(input.contains(" ")) {
             String end = input.substring(input.indexOf(" ") + 1);
             switch (input.substring(0, input.indexOf(" "))) {
@@ -62,7 +64,7 @@ public class Manager {
                     return freezeElements(end);
                 case "background":
                     try {
-                        level.setBackground(Background.valueOf(end));
+                        level.setBackground(Background.valueOf(end.toUpperCase()));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -74,7 +76,7 @@ public class Manager {
                     return true;
                 case "load":
                     //Loader.loadLevel(end);
-                    Loader.experimentalLoadLevel(end);
+                    Loader.loadLevel(end);
                     return true;
                 case "bgm":
                     level.changeMusic(BGM.valueOf(end.toUpperCase()));
@@ -98,7 +100,9 @@ public class Manager {
                     System.exit(0);
                     return true;
                 case "unload":
-                    Loader.unloadLevel();
+                    ents.clear();
+                    tiles.clear();
+                    level = new Level(Background.AQUA_BACKGROUND, BGM.GRASS_LAND);
                     return true;
                 case "mute":
                     Settings.muted = !Settings.muted;
@@ -107,7 +111,7 @@ public class Manager {
         return false;
     }
 
-    public static boolean addStats(String stat){
+    public boolean addStats(String stat){
         int end = Integer.parseInt(stat.substring(stat.indexOf(" ")+1));
         switch (stat.substring(0,stat.indexOf(" "))){
             case "score":
@@ -123,7 +127,7 @@ public class Manager {
         return false;
     }
 
-    public static boolean freezeElements(String element){
+    public boolean freezeElements(String element){
         switch (element){
             case "all":
                 for(Entity entity: ents){
@@ -169,21 +173,21 @@ public class Manager {
         return false;
     }
 
-    public static void resetEntities(){
+    public void resetEntities(){
         for(Entity ent: ents){
             ent.removeFromLayer();
             ents.remove(ent);
         }
     }
 
-    public static void resetTiles(){
+    public void resetTiles(){
         for(Tile tile: tiles){
             tile.removeFromLayer();
             tiles.remove(tile);
         }
     }
 
-    public static void select(){
+    public void select(){
         for(Entity ent: ents){
             if(ent.getHitBox().intersects(Controls.mouseHitBox)){
                 if(selectedEntity!=null){
@@ -210,7 +214,7 @@ public class Manager {
         }
     }
 
-    public static void freeEntity(){
+    public void freeEntity(){
         if(selectedEntity!=null){
              if(System.nanoTime()-timer1>100000000){
                 if(Controls.six&&selectedEntity.getDirection()==0){
@@ -225,16 +229,16 @@ public class Manager {
         }
     }
 
-    public static void culling(){
+    public void culling(){
         //Checks to see if the element is within the screen's boundaries otherwise it unloads it
-        for(Entity entity: Manager.ents){
+        for(Entity entity: ents){
             if(!screen.intersects(entity.getHitBox())&&!screen.contains(entity.getHitBox())){
                 entity.setUnloaded(true);
             } else {
              entity.setUnloaded(false);
             }
         }
-        for(Tile tile: Manager.tiles){
+        for(Tile tile: tiles){
             if(!screen.intersects(tile.getHitBox())&&!screen.contains(tile.getHitBox())){
                 tile.setUnloaded(true);
             } else {
@@ -244,7 +248,7 @@ public class Manager {
     }
 
 
-    public static void tick(){
+    public void tick(){
         if(Settings.debug){
             freeEntity();
         }
@@ -256,7 +260,7 @@ public class Manager {
         }
     }
 
-    private static void marioCheck(){
+    private void marioCheck(){
         if(player!=null){
             player.removeFromLayer();
             ents.remove(player);
@@ -264,7 +268,7 @@ public class Manager {
         }
     }
 
-    public static boolean removeElement(String element){
+    public boolean removeElement(String element){
         if(element.equals("entities")){
             resetEntities();
             return true;
@@ -275,7 +279,7 @@ public class Manager {
         return false;
     }
 
-    public static boolean spawnElement(String element){
+    public boolean spawnElement(String element){
         String temp;
         if(element.contains(" ")){
             temp = element.substring(0, element.indexOf(" "));
@@ -371,7 +375,7 @@ public class Manager {
         return false;
     }
 
-    public static void deleteSelected(){
+    public void deleteSelected(){
         if(selectedEntity!=null){
             if(Controls.delete){
                 if(selectedEntity==player){
@@ -391,7 +395,7 @@ public class Manager {
         }
     }
 
-    public static void sideScroll(){
+    public void sideScroll(){
         if(Settings.debug&&!Controls.shift){
             if(System.nanoTime()-debugScroll>70000000){
                 if(Controls.right){
@@ -474,8 +478,8 @@ public class Manager {
     }
 
 
-    public static void collision(){
-        for(Entity ent : Manager.ents){
+    public void collision(){
+        for(Entity ent : ents){
             if(ent.isCollision()&&!ent.isUnloaded()){
                 if(player!=null){
                     if(ent instanceof Enemy){
@@ -512,7 +516,7 @@ public class Manager {
                     }
                 }
                 //If two entities collide
-                for(Entity ent2: Manager.ents){
+                for(Entity ent2: ents){
                     if(ent!=ent2) {
                         if (ent2.isCollision() && !ent2.isUnloaded()) {
                             if (ent instanceof Enemy && ent2 instanceof Enemy) {
@@ -556,4 +560,55 @@ public class Manager {
         }
     }
 
+    public Level getLevel() {
+        return level;
+    }
+
+    public Entity getSelectedEntity() {
+        return selectedEntity;
+    }
+
+    public Tile getSelectedTile() {
+        return selectedTile;
+    }
+
+    public CopyOnWriteArrayList<Entity> getEnts() {
+        return ents;
+    }
+
+    public CopyOnWriteArrayList<Tile> getTiles() {
+        return tiles;
+    }
+
+    public CopyOnWriteArrayList<Elements> getSavedObjects() {
+        return saveObjects;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Rectangle getScreen() {
+        return screen;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
+    public void setSavedObjects(CopyOnWriteArrayList<Elements> saveObjects) {
+        this.saveObjects = saveObjects;
+    }
+
+    public void setSelectedEntity(Entity selectedEntity) {
+        this.selectedEntity = selectedEntity;
+    }
+
+    public void setSelectedTile(Tile selectedTile) {
+        this.selectedTile = selectedTile;
+    }
+
+    public int getPreviousDirection() {
+        return previousDirection;
+    }
 }

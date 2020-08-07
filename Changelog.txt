@@ -1,16 +1,10 @@
-Version 0.2.9
+Version 0.2.10
 
 Bug Fixes:
-- None
+- Fixed lower case backgrounds throwing errors
+- Fixed a bug where the background would not update
 
 Additions and Changes:
 
-- Complete Overhaul of graphics system and saving and loading system
-(Note: Unfortunately there was a downside to the overhaul, old saves will be incompatible with new versions
-if there's a lot of changes to the API specifically any API having to do with entities and tiles)
-
-- Music is now loaded and changed differently (Using enums)
-
-- Changed a bunch of objects to not be static anymore but become objects to combat static abuse
-
-- Performance fixes
+- Made the manager class which handles all physics and entities/tiles into an object to avoid static abuse.
+- Removed old loading system

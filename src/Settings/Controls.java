@@ -2,6 +2,8 @@ package Settings;
 
 import Elements.Manager;
 import Graphics.Window;
+import Main.Main;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -67,11 +69,11 @@ public class Controls implements KeyListener, MouseMotionListener, MouseListener
     public void mouseDragged(MouseEvent e) {
         if(Settings.debug) {
             mouseHitBox.setLocation(e.getX()-20,e.getY()-45);
-            if (Manager.selectedEntity != null) {
-                    Manager.selectedEntity.setLocation(new Point(((mouseHitBox.getLocation().x / 60) * 60), ((mouseHitBox.getLocation().y / 60) * 60)));
+            if (Main.game.getManager().getSelectedEntity() != null) {
+                Main.game.getManager().getSelectedEntity().setLocation(new Point(((mouseHitBox.getLocation().x / 60) * 60), ((mouseHitBox.getLocation().y / 60) * 60)));
             }
-            if (Manager.selectedTile != null) {
-                    Manager.selectedTile.setLocation(new Point(((mouseHitBox.getLocation().x / 60) * 60), ((mouseHitBox.getLocation().y / 60) * 60)));
+            if (Main.game.getManager().getSelectedTile() != null) {
+                Main.game.getManager().getSelectedTile().setLocation(new Point(((mouseHitBox.getLocation().x / 60) * 60), ((mouseHitBox.getLocation().y / 60) * 60)));
             }
         }
     }
@@ -86,7 +88,7 @@ public class Controls implements KeyListener, MouseMotionListener, MouseListener
     @Override
     public void mouseClicked(MouseEvent e) {
         if(Settings.debug){
-            Manager.select();
+            Main.game.getManager().select();
         }
     }
 

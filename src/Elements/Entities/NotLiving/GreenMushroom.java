@@ -31,7 +31,7 @@ public class GreenMushroom extends NotLiving {
         SFX.up1.setFramePosition(0);
         SFX.up1.start();
         removeFromLayer();
-        Manager.ents.remove(this);
+        Main.game.getManager().getEnts().remove(this);
     }
 
     @Override

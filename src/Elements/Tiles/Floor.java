@@ -25,7 +25,7 @@ public class Floor extends Tile implements Adjustables, LayeredTile{
     @Override
     public void tick() {
         super.tick();
-        if(Manager.selectedTile==this){
+        if(Main.game.getManager().getSelectedTile()==this){
             changeHeight();
             changeLength();
         }

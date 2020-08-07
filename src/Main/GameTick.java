@@ -7,6 +7,7 @@ import Graphics.Window;
 import Level.*;
 import Settings.Controls;
 import Settings.Settings;
+import Sound.BGM;
 import Sound.BGMPlayer;
 import Elements.Tiles.Tile;
 import Sound.SFX;
@@ -28,15 +29,15 @@ public class GameTick implements Runnable {
 
     private final SpritesLoader spritesLoader = new SpritesLoader();
     Window window;
+    Manager manager;
 
     private boolean running;
 
     public GameTick(){
         try {
+            manager = new Manager();
             sfx = new SFX();
             bgmPlayer = new BGMPlayer(BGM.GRASS_LAND);
-            Manager.level = new Level(Background.AQUA_BACKGROUND, BGM.GRASS_LAND);
-            window = new Window();
         } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
             e.printStackTrace();
         }
@@ -44,21 +45,23 @@ public class GameTick implements Runnable {
 
     @Override
     public void run() {
+        manager.setLevel(new Level(Background.AQUA_BACKGROUND, BGM.GRASS_LAND));
+        window = new Window();
         bgmPlayer.getMusic().start();
         while(running){
             count++;
             Controls.tick();
             Settings.tick();
-            Manager.tick();
+            manager.tick();
             Global.HUDcheck();
 
-            for(Entity ent:Manager.ents){
+            for(Entity ent:manager.getEnts()){
                 if(!ent.isUnloaded()){
                     ent.tick();
                 }
                 ent.cullingException();
             }
-            for(Tile tile:Manager.tiles){
+            for(Tile tile:manager.getTiles()){
                 if(!tile.isUnloaded()){
                     tile.tick();
                 }
@@ -109,6 +112,10 @@ public class GameTick implements Runnable {
 
     public BGMPlayer getBgmPlayer() {
         return bgmPlayer;
+    }
+
+    public Manager getManager() {
+        return manager;
     }
 
 }

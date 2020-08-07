@@ -4,6 +4,7 @@ import Elements.Layer;
 import Elements.Tiles.Adjustables;
 import Elements.Tiles.LayeredTile;
 import Elements.Tiles.Tile;
+import Main.Main;
 import Settings.Controls;
 import Elements.Manager;
 import java.awt.*;
@@ -24,7 +25,7 @@ public class Tool extends Tile implements Adjustables, LayeredTile {
 
     public void tick(){
         super.tick();
-        if(Manager.selectedTile==this){
+        if(Main.game.getManager().getSelectedTile()==this){
             changeHeight();
             changeLength();
         }

@@ -27,7 +27,7 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
     @Override
     public void tick() {
         super.tick();
-        if(Manager.selectedTile==this){
+        if(Main.game.getManager().getSelectedTile()==this){
             changeHeight();
             changeLength();
         }

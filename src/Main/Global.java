@@ -18,9 +18,9 @@ public class Global {
 
 
     public static void HUDcheck(){
-        if(Manager.player!=null){
+        if(Main.game.getManager().getPlayer()!=null){
             active = new boolean[7];
-            int temp = (int)Manager.player.getXVelocity();
+            int temp = (int)Main.game.getManager().getPlayer().getXVelocity();
             for(int i = 1; temp>4; i++){
                 active[i] = true;
                 temp--;

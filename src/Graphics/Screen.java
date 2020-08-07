@@ -10,6 +10,7 @@ import Elements.Tiles.Tools.Trigger;
 import Main.Cards;
 import Main.Global;
 import Main.GameTick;
+import Main.Main;
 import Settings.Controls;
 import Settings.Settings;
 import Elements.Manager;
@@ -34,14 +35,12 @@ public class Screen extends JPanel {
     public final CopyOnWriteArrayList<Elements> layer3 = new CopyOnWriteArrayList<>();
     Color clipColor = new Color(255,0,0,100);
     Color triggerColor = new Color(169, 169, 169, 100);
-    Image background;
     Image board, speed, power, crt;
     public static HashMap<Integer,Image> nums;
     public Screen(){
         debugMessages = new String();
         nums = new HashMap<>();
         try {
-            background = ImageIO.read(new File(Manager.level.getBackground().getURL()));
             board = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\main.png"));
             speed = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\speed.png"));
             power = ImageIO.read(new File(Global.localPath+"\\assets\\HUD\\p.png"));
@@ -62,7 +61,11 @@ public class Screen extends JPanel {
         super.paint(g);
         scaling();
         count++;
-        g.drawImage(background,0,0,(int)(1920*Window.scaleX),(int)(1080*Window.scaleY),this);
+        try {
+            g.drawImage(Main.game.getManager().getLevel().getBackgroundSprite(), 0, 0, (int) (1920 * Window.scaleX), (int) (1080 * Window.scaleY), this);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         paintElements(g,layer1);
         paintElements(g,layer2);
         paintElements(g,layer3);
@@ -98,7 +101,7 @@ public class Screen extends JPanel {
             for(int i = 0; i<33; i++){
                 g.drawLine((int)((i*60)*Window.scaleX),0,(int)((i*60)*Window.scaleX),(int)(1080*Window.scaleY));
             }
-            for(Tile tool: Manager.tiles){
+            for(Tile tool: Main.game.getManager().getTiles()){
                 if(tool instanceof Clip){
                     g.setColor(clipColor);
                     g.fillRect(tool.getLocation().x,tool.getLocation().y,tool.getWidth(),tool.getHeight());
@@ -109,7 +112,7 @@ public class Screen extends JPanel {
                 }
             }
             g.setColor(Color.RED);
-            g.drawString("Entity Count: "+ Manager.ents.size(),(int)(1000*Window.scaleX),(int)(20*Window.scaleY));
+            g.drawString("Entity Count: "+ Main.game.getManager().getEnts().size(),(int)(1000*Window.scaleX),(int)(20*Window.scaleY));
         }
         if(Settings.fps||Settings.debug){
             if(fps<=15){
@@ -125,21 +128,23 @@ public class Screen extends JPanel {
         }
         if(Settings.hitBoxes){
             g.setColor(Color.GREEN);
-            for(Entity ent : Manager.ents){
+            for(Entity ent : Main.game.getManager().getEnts()){
                 g.drawRect((int)(ent.getLocation().x*Window.scaleX),(int)(ent.getLocation().y*Window.scaleY),(int)(ent.getWidth()*Window.scaleX),(int)(ent.getHeight()*Window.scaleY));
             }
-            for(Tile tile : Manager.tiles){
+            for(Tile tile : Main.game.getManager().getTiles()){
                 g.drawRect((int)(tile.getLocation().x*Window.scaleX),(int)(tile.getLocation().y*Window.scaleY),(int)(tile.getWidth()*Window.scaleX),(int)(tile.getHeight()*Window.scaleY));
             }
             g.drawRect((int)(Controls.mouseHitBox.x*Window.scaleX),(int)(Controls.mouseHitBox.y*Window.scaleY),(int)(Controls.mouseHitBox.width*Window.scaleX),(int)(Controls.mouseHitBox.height*Window.scaleY));
             g.setColor(Color.RED);
-            if(Manager.selectedEntity!=null){
-                g.drawString(Manager.selectedEntity.toString(),(int)(20*Window.scaleX),(int)(20*Window.scaleY));
-                g.drawRect((int)(Manager.selectedEntity.getLocation().x*Window.scaleX), (int)(Manager.selectedEntity.getLocation().y*Window.scaleY), (int)(Manager.selectedEntity.getWidth()*Window.scaleX), (int)(Manager.selectedEntity.getHeight()*Window.scaleY));
+            if(Main.game.getManager().getSelectedEntity()!=null){
+                Entity ent = Main.game.getManager().getSelectedEntity();
+                g.drawString(ent.toString(),(int)(20*Window.scaleX),(int)(20*Window.scaleY));
+                g.drawRect((int)(ent.getLocation().x*Window.scaleX), (int)(ent.getLocation().y*Window.scaleY), (int)(ent.getWidth()*Window.scaleX), (int)(ent.getHeight()*Window.scaleY));
             }
-            if(Manager.selectedTile!=null){
-                g.drawString(Manager.selectedTile.toString(),(int)(20*Window.scaleX),(int)(40*Window.scaleY));
-                g.drawRect((int)(Manager.selectedTile.getLocation().x*Window.scaleX), (int)(Manager.selectedTile.getLocation().y*Window.scaleY), (int)(Manager.selectedTile.getWidth()*Window.scaleX), (int)(Manager.selectedTile.getHeight()*Window.scaleY));
+            if(Main.game.getManager().getSelectedTile()!=null){
+                Tile tile = Main.game.getManager().getSelectedTile();
+                g.drawString(tile.toString(),(int)(20*Window.scaleX),(int)(40*Window.scaleY));
+                g.drawRect((int)(tile.getLocation().x*Window.scaleX), (int)(tile.getLocation().y*Window.scaleY), (int)(tile.getWidth()*Window.scaleX), (int)(tile.getHeight()*Window.scaleY));
             }
         }
        // g.drawLine(0,300,1920,300);
@@ -161,13 +166,13 @@ public class Screen extends JPanel {
             Controls.enter = false;
             Controls.console = false;
             input = input.replace("\n", "").replace("\r", "");
-            error = Manager.commandInput(input.toLowerCase());
+            error = Main.game.getManager().commandInput(input.toLowerCase());
             input = "";
         }
         if(Settings.crt){
             g.drawImage(crt,0,0,(int)(1920*Window.scaleX),(int)(1080*Window.scaleY),this);
         }
-            g.drawString(debugMessages,100,100);
+        g.drawString(debugMessages,100,100);
         g.setColor(Color.GREEN);
     }
 

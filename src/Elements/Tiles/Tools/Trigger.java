@@ -1,7 +1,7 @@
 package Elements.Tiles.Tools;
 
 import Elements.Layer;
-import Elements.Manager;
+import Main.Main;
 
 import java.awt.*;
 
@@ -25,12 +25,12 @@ public class Trigger extends Tool {
     public void tick() {
         super.tick();
         if(MAX_ACTIVATIONS!=0&&activations>=MAX_ACTIVATIONS){
-            Manager.tiles.remove(this);
+            Main.game.getManager().getTiles().remove(this);
         }
         if(System.nanoTime()-timer>80000000){
-            if(Manager.player!=null&&Manager.player.getHitBox().intersects(getHitBox())){
+            if(Main.game.getManager().getPlayer()!=null&&Main.game.getManager().getPlayer().getHitBox().intersects(getHitBox())){
                 if(!stillInContact){
-                    Manager.commandInput(Command.toLowerCase());
+                    Main.game.getManager().commandInput(Command.toLowerCase());
                     activations++;
                     stillInContact = true;
                 }

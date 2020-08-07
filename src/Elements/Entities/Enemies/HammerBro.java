@@ -39,7 +39,7 @@ public class HammerBro extends Enemy {
                 setSprite(-1);
             }
             if(System.nanoTime()-attackTimer>2000000000){
-                if(isFacingEntity(Manager.player)){
+                if(isFacingEntity(Main.game.getManager().getPlayer())){
                     attack();
                 } else {
                     setDirection(getDirection()*-1);
@@ -54,7 +54,7 @@ public class HammerBro extends Enemy {
     public void attack(){
         if(type==3){
             setSprite(1);
-            Manager.ents.add(new Fireball(Layer.MIDDLE_LAYER,getLocation(),40,40,getDirection(),false));
+            Main.game.getManager().getEnts().add(new Fireball(Layer.MIDDLE_LAYER,getLocation(),40,40,getDirection(),false));
         }
     }
 
