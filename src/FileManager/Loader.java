@@ -46,6 +46,7 @@ public class Loader {
                     Main.game.getManager().getTiles().add((Tile) obj);
                 } else if (obj instanceof Level) {
                     Main.game.getManager().setLevel((Level) obj);
+                    Main.game.getManager().getLevel().changeMusic(Main.game.getManager().getLevel().getBgm());
                 }
             }
             load.close();

@@ -1,7 +1,6 @@
 package Elements.Tiles;
 
 import Elements.Layer;
-import Elements.Manager;
 import Main.Main;
 import Settings.Controls;
 import java.awt.*;
@@ -22,6 +21,7 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
         setTileName("Hill");
         this.setWidth(120);
         this.setHeight(((blocks/2)+1)*60);
+        calculateTileLayers();
     }
 
     @Override
@@ -46,6 +46,7 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
             }
             timer = System.nanoTime();
             this.setHeight(((blocks/2)+1)*60);
+            calculateTileLayers();
         }
     }
 
@@ -67,26 +68,26 @@ public class Hill extends Tile implements LayeredTile,Adjustables {
 
     @Override
     public Image[] getSprites() {
-        Image[] ret = new Image[2+blocks];
-        ret[0] = getTypeTextures()[2];
-        ret[1] = getTypeTextures()[3];
-        for(int i = 2; i+1<ret.length; i++){
-            ret[i] = getTypeTextures()[0];
-            ret[i+1] = getTypeTextures()[1];
-        }
+        return null;
+    }
 
-        return ret;
+    @Override
+    public void calculateTileLayers() {
+        Image[][] tile = new Image[(2+blocks)/2][2];
+        tile[0][0] = getTypeTextures()[2];
+        tile[0][1] = getTypeTextures()[3];
+        for(int i = 1; i<tile.length; i++){
+            tile[i][0] = getTypeTextures()[0];
+            tile[i][1] = getTypeTextures()[1];
+        }
+        Main.game.getManager().getTileLayouts().put(getUUID(),tile);
     }
 
     public Image[][] get2DSprites(){
-        Image[][] ret = new Image[(2+blocks)/2][2];
-        ret[0][0] = getTypeTextures()[2];
-        ret[0][1] = getTypeTextures()[3];
-        for(int i = 1; i<ret.length; i++){
-            ret[i][0] = getTypeTextures()[0];
-            ret[i][1] = getTypeTextures()[1];
+        if (!Main.game.getManager().getTileLayouts().containsKey(getUUID())) {
+            calculateTileLayers();
         }
-        return ret;
+        return Main.game.getManager().getTileLayouts().get(getUUID());
     }
 
     public String toString() {

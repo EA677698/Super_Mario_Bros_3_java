@@ -3,11 +3,9 @@ package Level;
 import Elements.Elements;
 import Main.Main;
 import java.awt.*;
-import java.io.File;
 import java.io.Serializable;
 import Elements.Layer;
 import Sound.BGM;
-import javax.imageio.ImageIO;
 
 public class Level extends Elements implements Serializable {
 
@@ -25,12 +23,7 @@ public class Level extends Elements implements Serializable {
     }
 
     public Image getBackgroundSprite(){
-        try {
-            return ImageIO.read(new File(getBackground().getURL()));
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
+        return Main.game.getSpritesLoader().getBackgrounds()[background.getIndex()];
     }
 
     public void setBackground(Background background) {

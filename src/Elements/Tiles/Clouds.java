@@ -12,6 +12,7 @@ public class Clouds extends Tile implements LayeredTile {
         super(layer, location, collision);
         this.type = type;
         setTileName("Cloud");
+        calculateTileLayers();
     }
 
     @Override
@@ -20,16 +21,24 @@ public class Clouds extends Tile implements LayeredTile {
     }
 
     @Override
-    public Image[][] get2DSprites() {
-        Image[][] ret = new Image[2][3];
+    public void calculateTileLayers() {
+        Image[][] tile = new Image[2][3];
         int index = 0;
-        for(int i = 0; i<ret.length; i++){
-            for(int e = 0; e<ret[0].length; e++){
-                ret[i][e] = Main.game.getSpritesLoader().getClouds()[index];
+        for(int i = 0; i<tile.length; i++){
+            for(int e = 0; e<tile[0].length; e++){
+                tile[i][e] = Main.game.getSpritesLoader().getClouds()[index];
                 index++;
             }
         }
-        return ret;
+        Main.game.getManager().getTileLayouts().put(getUUID(),tile);
+    }
+
+    @Override
+    public Image[][] get2DSprites() {
+        if (!Main.game.getManager().getTileLayouts().containsKey(getUUID())) {
+            calculateTileLayers();
+        }
+        return Main.game.getManager().getTileLayouts().get(getUUID());
     }
 
     @Override

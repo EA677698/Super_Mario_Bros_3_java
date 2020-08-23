@@ -21,8 +21,8 @@ import Graphics.Window;
 import Elements.Tiles.Interactables.Bricks;
 import Elements.Tiles.Interactables.LuckyBlock;
 import java.awt.*;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
 import Level.Background;
 
@@ -36,19 +36,13 @@ public class Manager {
     private final CopyOnWriteArrayList<Entity> ents = new CopyOnWriteArrayList<>();
     private final CopyOnWriteArrayList<Tile> tiles = new CopyOnWriteArrayList<>();
     private CopyOnWriteArrayList<Elements> saveObjects = new CopyOnWriteArrayList<>();
-    private final HashMap<String, Entity> customEntities = new HashMap<>();
+    private final HashMap<UUID, Image[][]> tileLayouts = new HashMap<>();
     private Player player;
     private Level level;
     private Rectangle screen = new Rectangle(0,0,1920,1080);
     private double timer1 = System.nanoTime();
     private double hitTimer = System.nanoTime();
     private double debugScroll = System.nanoTime();
-
-    public void registerEntity(String command, Entity entity){
-        customEntities.put(command,entity);
-        entity.removeFromLayer();
-    }
-
 
     public boolean commandInput(String input){
         if(input.contains(" ")) {
@@ -331,7 +325,7 @@ public class Manager {
                 tiles.add(new Pipes(Layer.MIDDLE_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2),true,4));
                 return true;
             case "cloud1":
-                tiles.add(new Clouds(Layer.BACK_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2), true ,1));
+                tiles.add(new Clouds(Layer.BACK_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2), false ,1));
                 return true;
             case "bg":
                 tiles.add(new BigBlocks(Layer.BACK_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2),true,0,0,0));
@@ -346,7 +340,7 @@ public class Manager {
                 tiles.add(new BigBlocks(Layer.BACK_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2),true,3,0,0));
                 return true;
             case  "shrub":
-                tiles.add(new Shrub(Layer.BACK_LAYER,new Point(Window.screenWidth/2,Window.screenHeight/2),true));
+                tiles.add(new Shrub(Layer.BACK_LAYER,new Point(Window.screenWidth/2,Window.screenHeight/2),false));
                 return true;
             case "clip":
                tiles.add(new Clip(Layer.FRONT_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2),0,1));
@@ -356,21 +350,6 @@ public class Manager {
                 int activations = Integer.parseInt(element.substring(element.lastIndexOf(" ")+1));
                 tiles.add(new Trigger(Layer.FRONT_LAYER, new Point(Window.screenWidth/2,Window.screenHeight/2), 0,1, command, activations));
                 return true;
-        }
-        if(customEntities.containsKey(element)){ ;
-            try {
-                try {
-                    ents.add(customEntities.get(element).getClass().getDeclaredConstructor().newInstance());
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                } catch (NoSuchMethodException e) {
-                    e.printStackTrace();
-                }
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
         }
         return false;
     }
@@ -610,5 +589,9 @@ public class Manager {
 
     public int getPreviousDirection() {
         return previousDirection;
+    }
+
+    public HashMap<UUID, Image[][]> getTileLayouts() {
+        return tileLayouts;
     }
 }

@@ -8,12 +8,14 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.UUID;
 
 public abstract class Elements implements Serializable {
 
     private Layer layer;
     private Point location;
     private boolean unloaded;
+    private UUID uuid;
 
     public Elements(Layer layer, Point location){
         this.layer = layer;
@@ -29,6 +31,7 @@ public abstract class Elements implements Serializable {
                 Window.screen.layer3.add(this);
                 break;
         }
+        uuid = UUID.randomUUID();
         Main.game.getManager().getSavedObjects().add(this);
     }
 
@@ -113,5 +116,9 @@ public abstract class Elements implements Serializable {
 
     public void setLocation(Point location) {
         this.location = location;
+    }
+
+    public UUID getUUID() {
+        return uuid;
     }
 }

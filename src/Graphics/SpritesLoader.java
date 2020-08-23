@@ -33,9 +33,14 @@ public class SpritesLoader {
     private final Image[] shrub = new Image[1];
     private final Image[] woodenBlock = new Image[1];
 
+ //OTHER
+    private final Image[] cards = new Image[4];
+    private final Image[] backgrounds = new Image[7];
+
     public SpritesLoader() {
         loadEntitySprites();
         loadTileSprites();
+        loadOtherSprites();
     }
 
     public void loadTileSprites() {
@@ -106,6 +111,28 @@ public class SpritesLoader {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void loadOtherSprites(){
+        try {
+            cards[0] = ImageIO.read(new File(Global.localPath + "\\assets\\HUD\\emptyCard.png"));
+            cards[1] = ImageIO.read(new File(Global.localPath + "\\assets\\HUD\\mushroomCard.png"));
+            cards[2] = ImageIO.read(new File(Global.localPath + "\\assets\\HUD\\flowerCard.png"));
+            cards[3] = ImageIO.read(new File(Global.localPath + "\\assets\\HUD\\starCard.png"));
+            for(int i = 1; i<8; i++){
+                backgrounds[i-1] = ImageIO.read(new File(Global.localPath+"\\assets\\Tiles\\background\\"+i+".png"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public Image[] getBackgrounds(){
+        return backgrounds;
+    }
+
+    public Image[] getCards(){
+        return cards;
     }
 
     public Image[] getSmallMario() {

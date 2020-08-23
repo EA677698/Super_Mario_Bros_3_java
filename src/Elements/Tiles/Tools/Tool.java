@@ -6,7 +6,6 @@ import Elements.Tiles.LayeredTile;
 import Elements.Tiles.Tile;
 import Main.Main;
 import Settings.Controls;
-import Elements.Manager;
 import java.awt.*;
 
 public class Tool extends Tile implements Adjustables, LayeredTile {
@@ -59,6 +58,11 @@ public class Tool extends Tile implements Adjustables, LayeredTile {
             timerY = System.nanoTime();
             setHeight(layers*60);
         }
+    }
+
+    @Override
+    public void calculateTileLayers() {
+
     }
 
     @Override

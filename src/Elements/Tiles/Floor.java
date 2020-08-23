@@ -1,7 +1,6 @@
 package Elements.Tiles;
 
 import Elements.Layer;
-import Elements.Manager;
 import Main.Main;
 import Settings.Controls;
 
@@ -20,6 +19,7 @@ public class Floor extends Tile implements Adjustables, LayeredTile{
         this.setTileName("Platform");
         this.setWidth(120+(middleBlocks*60));
         setHitBox(new Rectangle(getWidth(),getHeight()));
+        calculateTileLayers();
     }
 
     @Override
@@ -40,6 +40,7 @@ public class Floor extends Tile implements Adjustables, LayeredTile{
             }
             timerX = System.nanoTime();
             this.setWidth(120+(middleBlocks*60));
+            calculateTileLayers();
         }
     }
 
@@ -53,41 +54,44 @@ public class Floor extends Tile implements Adjustables, LayeredTile{
             }
             timerY = System.nanoTime();
             this.setHeight(60+(layers*60));
+            calculateTileLayers();
         }
     }
 
     @Override
     public Image[] getSprites() {
-        Image[] blocks = new Image[middleBlocks+2];
-        blocks[0] = Main.game.getSpritesLoader().getFloor()[0];
-        for(int i = 1; i<blocks.length-1; i++){
-            blocks[i] = Main.game.getSpritesLoader().getFloor()[1];
-        }
-        blocks[blocks.length-1] = Main.game.getSpritesLoader().getFloor()[2];
-        return blocks;
+        return null;
     }
 
 
     @Override
-    public Image[][] get2DSprites() {
-        Image[][] ret = new Image[1+layers][2+middleBlocks];
-        ret[0][0] = Main.game.getSpritesLoader().getFloor()[0];
-        for(int i = 1; i<ret[0].length-1; i++){
-            ret[0][i] = Main.game.getSpritesLoader().getFloor()[1];
+    public void calculateTileLayers() {
+        Image[][] tile = new Image[1+layers][2+middleBlocks];
+        tile[0][0] = Main.game.getSpritesLoader().getFloor()[0];
+        for(int i = 1; i<tile[0].length-1; i++){
+            tile[0][i] = Main.game.getSpritesLoader().getFloor()[1];
         }
-        ret[0][ret[0].length-1] = Main.game.getSpritesLoader().getFloor()[2];
-        for(int i = 1; i<ret.length; i++){
-            for(int e = 0; e<ret[0].length; e++){
+        tile[0][tile[0].length-1] = Main.game.getSpritesLoader().getFloor()[2];
+        for(int i = 1; i<tile.length; i++){
+            for(int e = 0; e<tile[0].length; e++){
                 if(e==0){
-                    ret[i][e] = Main.game.getSpritesLoader().getFloor()[3];
-                } else if(e==ret[0].length-1){
-                    ret[i][e] = Main.game.getSpritesLoader().getFloor()[5];
+                    tile[i][e] = Main.game.getSpritesLoader().getFloor()[3];
+                } else if(e==tile[0].length-1){
+                    tile[i][e] = Main.game.getSpritesLoader().getFloor()[5];
                 } else {
-                    ret[i][e] = Main.game.getSpritesLoader().getFloor()[4];
+                    tile[i][e] = Main.game.getSpritesLoader().getFloor()[4];
                 }
             }
         }
-        return ret;
+        Main.game.getManager().getTileLayouts().put(getUUID(),tile);
+    }
+
+    @Override
+    public Image[][] get2DSprites() {
+        if (!Main.game.getManager().getTileLayouts().containsKey(getUUID())) {
+            calculateTileLayers();
+        }
+        return Main.game.getManager().getTileLayouts().get(getUUID());
     }
 
     public String toString() {

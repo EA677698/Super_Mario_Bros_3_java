@@ -13,7 +13,6 @@ import Main.GameTick;
 import Main.Main;
 import Settings.Controls;
 import Settings.Settings;
-import Elements.Manager;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;

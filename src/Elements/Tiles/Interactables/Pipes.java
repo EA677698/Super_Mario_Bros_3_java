@@ -1,7 +1,6 @@
 package Elements.Tiles.Interactables;
 
 import Elements.Layer;
-import Elements.Manager;
 import Elements.Tiles.Adjustables;
 import Elements.Tiles.LayeredTile;
 import Main.Main;
@@ -20,6 +19,7 @@ public class Pipes extends Interactable implements LayeredTile, Adjustables {
         setTileName("Pipe");
         this.setWidth(120);
         this.setHeight(((blocks/2)+1)*60);
+        calculateTileLayers();
     }
 
     @Override
@@ -68,15 +68,23 @@ public class Pipes extends Interactable implements LayeredTile, Adjustables {
     }
 
     @Override
-    public Image[][] get2DSprites() {
-        Image[][] ret = new Image[(2+blocks)/2][2];
-        ret[0][0] = Main.game.getSpritesLoader().getPipes()[0];
-        ret[0][1] = Main.game.getSpritesLoader().getPipes()[1];
-        for(int i = 1; i<ret.length; i++){
-            ret[i][0] = Main.game.getSpritesLoader().getPipes()[2];
-            ret[i][1] = Main.game.getSpritesLoader().getPipes()[3];
+    public void calculateTileLayers() {
+        Image[][] tile = new Image[(2+blocks)/2][2];
+        tile[0][0] = Main.game.getSpritesLoader().getPipes()[0];
+        tile[0][1] = Main.game.getSpritesLoader().getPipes()[1];
+        for(int i = 1; i<tile.length; i++){
+            tile[i][0] = Main.game.getSpritesLoader().getPipes()[2];
+            tile[i][1] = Main.game.getSpritesLoader().getPipes()[3];
         }
-        return ret;
+        Main.game.getManager().getTileLayouts().put(getUUID(),tile);
+    }
+
+    @Override
+    public Image[][] get2DSprites() {
+        if (!Main.game.getManager().getTileLayouts().containsKey(getUUID())) {
+            calculateTileLayers();
+        }
+        return Main.game.getManager().getTileLayouts().get(getUUID());
     }
 
     @Override
@@ -94,6 +102,7 @@ public class Pipes extends Interactable implements LayeredTile, Adjustables {
             }
             timer = System.nanoTime();
             this.setHeight(((blocks/2)+1)*60);
+            calculateTileLayers();
         }
     }
 

@@ -1,7 +1,6 @@
 package Elements.Tiles;
 
 import Elements.Layer;
-import Elements.Manager;
 import Main.Main;
 import Settings.Controls;
 import java.awt.*;
@@ -20,6 +19,7 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
         extraYLayers = columns;
         extraXLayers = rows;
         setTileName("BigBlock");
+        calculateTileLayers();
     }
 
     @Override
@@ -39,6 +39,8 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
             } else if(Controls.left&&extraYLayers>-1){
                 extraYLayers--;
             }
+            setWidth(180+(60*extraYLayers));
+            calculateTileLayers();
             timerX = System.nanoTime();
         }
     }
@@ -53,6 +55,8 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
                     extraXLayers--;
                 }
             }
+            setHeight(180+(60*extraXLayers));
+            calculateTileLayers();
             timerY = System.nanoTime();
         }
     }
@@ -68,7 +72,7 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
 
     @Override
     public Image[] getSprites() {
-        return new Image[0];
+        return null;
     }
 
     public int getType(){
@@ -84,9 +88,7 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
     }
 
     @Override
-    public Image[][] get2DSprites() {
-        setWidth(180+(60*extraYLayers));
-        setHeight(180+(60*extraXLayers));
+    public void calculateTileLayers() {
         Image[][] ret = new Image[3+extraXLayers][3];
         int index = 1;
         ret[0] = new Image[]{getTypeTextures()[0], getTypeTextures()[1], getTypeTextures()[2]};
@@ -95,20 +97,28 @@ public class BigBlocks extends Tile implements Adjustables, LayeredTile {
             index++;
         }
         ret[ret.length-1] = new Image[]{getTypeTextures()[6], getTypeTextures()[7], getTypeTextures()[8]};;
-        Image[][] retFinal = new Image[ret.length][ret[0].length+extraYLayers];
+        Image[][] tile = new Image[ret.length][ret[0].length+extraYLayers];
         for(int i = 0; i<ret.length; i++){
-            for(int e = retFinal[0].length-1; e>-1; e--){
-                if(e == retFinal[0].length-1){
-                    retFinal[i][retFinal[0].length-1] = ret[i][ret[0].length-1];
+            for(int e = tile[0].length-1; e>-1; e--){
+                if(e == tile[0].length-1){
+                    tile[i][tile[0].length-1] = ret[i][ret[0].length-1];
                 } else {
-                    retFinal[i][e] = ret[i][1];
+                    tile[i][e] = ret[i][1];
                 }
                 if(e == 0){
-                    retFinal[i][e] = ret[i][0];
+                    tile[i][e] = ret[i][0];
                 }
             }
         }
-        return retFinal;
+        Main.game.getManager().getTileLayouts().put(getUUID(),tile);
+    }
+
+    @Override
+    public Image[][] get2DSprites() {
+        if (!Main.game.getManager().getTileLayouts().containsKey(getUUID())) {
+            calculateTileLayers();
+        }
+        return Main.game.getManager().getTileLayouts().get(getUUID());
     }
 
     public String toString() {

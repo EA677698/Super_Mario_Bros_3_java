@@ -1,13 +1,7 @@
 package Main;
 
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-
-import Elements.Manager;
 import Graphics.Screen;
-
-import javax.imageio.ImageIO;
 
 public class Global {
 
@@ -39,6 +33,21 @@ public class Global {
         }
     }
 
+    public static void addCard(Cards card){
+        int totals = 0;
+        for(Cards selected : cards){
+            if(selected!=null){
+                totals++;
+            } else {
+                selected = card;
+                return;
+            }
+        }
+        if(totals==3){
+            lives++;
+        }
+    }
+
     public static Image[] getCards(){
         Image[] ret = new Image[3];
         ret[0] = cardToImage(cards[0]);
@@ -48,21 +57,16 @@ public class Global {
     }
 
     public static Image cardToImage(Cards card){
-        try{
-            switch (card){
-                case STAR_CARD:
-                    return ImageIO.read(new File(localPath+"\\assets\\HUD\\starCard.png"));
-                case FLOWER_CARD:
-                    return ImageIO.read(new File(localPath+"\\assets\\HUD\\flowerCard.png"));
-                case MUSHROOM_CARD:
-                    return ImageIO.read(new File(localPath+"\\assets\\HUD\\mushroomCard.png"));
-                default:
-                    return ImageIO.read(new File(localPath+"\\assets\\HUD\\emptyCard.png"));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        switch (card){
+            case STAR_CARD:
+                return Main.game.getSpritesLoader().getCards()[3];
+            case FLOWER_CARD:
+                return Main.game.getSpritesLoader().getCards()[2];
+            case MUSHROOM_CARD:
+                return Main.game.getSpritesLoader().getCards()[1];
+            default:
+                return Main.game.getSpritesLoader().getCards()[0];
         }
-        return null;
     }
 
     public static Image[] getTime(){

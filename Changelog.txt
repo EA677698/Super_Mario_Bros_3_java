@@ -1,10 +1,15 @@
-Version 0.2.10
+Version 0.3.1
 
 Bug Fixes:
-- Fixed lower case backgrounds throwing errors
-- Fixed a bug where the background would not update
+- Fixed a bug where clouds have collision
+- Fixed a bug where shrubs have collision
+- Fixed a bug where the music wouldn't change when a level was loaded in
 
 Additions and Changes:
 
-- Made the manager class which handles all physics and entities/tiles into an object to avoid static abuse.
-- Removed old loading system
+- Added UUIDs to all Elements
+- Layered tiles calculations are now stored
+- Layered tiles are only calculated now when they have not been stored
+- Card images are no longer calculated every tick but are now stored
+- Backgrounds are now stored instead of retrieved every frame\
+- Removed custom entity support (was non functional to begin with. Will be re-added later)
