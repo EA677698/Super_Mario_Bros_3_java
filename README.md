@@ -1,7 +1,5 @@
 # Super_Mario_Bros_3-master v0.3.1
 
-#### Join the project's [discord](https://discord.gg/G26wubP)!
-
 
 ## Controls
 - Left arrow - Moves Mario to the left
